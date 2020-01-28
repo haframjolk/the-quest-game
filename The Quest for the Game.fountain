@@ -124,3 +124,7 @@ Oh, sorry about that. I'll move my car.
 The henchman moves his car.
 
 >CUT TO GAMEPLAY
+
+Svenn walks down the street and sees Rasmusen's shop. If the player enters, a menu will appear showing the available items and the player's current balance, which is always $0. The player can only steal items and should they try to steal anything other than the item they're supposed to get (Coke in this case) a message will pop up saying that there are more important things to worry about.
+
+Once the player chooses to steal an item they must outrun Rasmusen, who chases them for a short period of time, with a timer visible on screen and exciting music playing. If the player is caught by Rasmusen, the item will be returned to the store and the player must attempt to steal it again.
