@@ -178,7 +178,7 @@ I guess I'll ask around and see if anyone has any.
 
 >CUT TO GAMEPLAY
 
-Svenn looks around the border checkpoint and talks to the people there. Nobody has any kiwifruit except for Rasmusen. If the player talks to Rasmusen, a cutscene is played.
+Svennz looks around the border checkpoint and talks to the people there. Nobody has any kiwifruit except for Rasmusen. If the player talks to Rasmusen, a cutscene is played.
 
 CUT TO:
 
@@ -218,3 +218,99 @@ Thanks mate, go on right through here.
 Svennz walks through the border checkpoint.
 
 >CUT TO GAMEPLAY
+
+Svennz is on the other side of the border checkpoint. Rasmusen's store is in plain sight. The player should walk up to the store and talk to Rasmusen. When they do, Rasmusen talks to the player.
+
+RASMUSEN
+Hi there! Welcome to the only store in New Zealand...
+On the only road in New Zealand...
+I think the writers of this game are not very familiar with New Zealand.
+
+The store menu appears. A few items are listed but the player can only choose Pepsi, and they can only steal it since they have no money (as with the earlier store). Once the player chooses to steal the Pepsi they must outrun Rasmusen, who chases them for a short period of time, with a timer visible on screen and exciting music playing. If the player is caught by Rasmusen, the item will be returned to the store and the player must attempt to steal it again. If the player successfully outruns Rasmusen a short cutscene will play.
+
+EXT. RASMUSEN'S STORE (NZ) - DAY
+
+Rasmusen stops.
+
+RASMUSEN
+Ich habe Durst!
+
+Rasmusen walks back towards the store.
+
+CUT TO:
+
+EXT. AGENT YONAS'S CASTLE - DAY
+
+Svenn and Svennz stand outside Yonas's castle. A guard is standing by the door. The player can control both of them at once. If they try to enter the castle, they will be stopped by the guard.
+
+GUARD
+You think I'm going to let you in to Agent Yonas's castle? Think again!
+
+Svenn and Svennz battle the guard. If they lose, they will have to start again. If they win, they will enter the castle.
+
+CUT TO:
+
+INT. AGENT YONAS'S CASTLE
+
+Svenn and Svennz are inside the castle. If they walk to the far right of the level they will hit a wall. If they try interacting with the wall a line of dialog will play, attributed to a mysterious voice.
+
+MYSTERIOUS VOICE
+Ha, ha, ha! Those simpletons will never figure out that they can walk *around* the wall! Ha, ha, ha!
+
+SVENN
+Svennz, we can walk around the wall!
+
+SVENNZ
+Oh my god!
+
+MYSTERIOUS VOICE
+...
+Oops.
+
+If Svenn and Svennz walk up or down they will find out the wall does not reach the end of the adjacent wall and they can therefore pass through to the next area, where Agent Yonas is standing. If the player gets close enough to Agent Yonas, a cutscene will play.
+
+AGENT YONAS
+Welcome, you two. Did you bring me the sodas?
+
+SVENN
+Yes Agent Yonas, here you go.
+
+AGENT YONAS
+...
+These...
+These are plastic bottles. I wanted cans.
+
+SVENNZ
+Oh, sorry. That's too bad. Can we have our game now?
+
+AGENT YONAS
+You have angered me. I'm not letting you leave without a fight. Let's battle!
+
+A battle starts between Svenn/Svennz and Agent Yonas. If the player loses the battle, they will be sent to the previous room and have to try again. If the player wins a cutscene will be played.
+
+AGENT YONAS
+You have defeated me. You deserve this.
+
+Agent Yonas gives Svenn and Svennz a copy of *The Quest for The Game*.
+
+SVENN
+...
+Wait...
+This is *our* game.
+
+SVENNZ
+Ooooooohhhhhhh.
+
+SVENN
+...
+
+SVENNZ
+...
+
+SVENN
+Hey, want to play our sponsor, RAID: Shadow Legends, one of the biggest mobile role-playing games of 2019 and it's totally free?
+
+SVENNZ
+HELL YEAH!
+
+>THE END<
