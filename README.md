@@ -1,3 +1,3 @@
 # The Quest for the Game
 
-## FORR3FL - Tækniskólinn vorönn 2020
+## FORR3FL - Tækniskólinn - tölvubraut vorönn 2020
