@@ -10,8 +10,8 @@ public enum Axis
 }
 public class PlayerController : MonoBehaviour
 {
-
     public float walkSpeed;
+    public LayerMask colliderLayers;
     private Rigidbody2D rb2d;
     private Axis currentAxis = Axis.None;
     private bool isMoving = false;
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // Define player movement based on axis
-            Vector3 playerMovement = new Vector3(0f, 0f, 0f);
+            Vector3 playerMovement = Vector3.zero;
             if (currentAxis == Axis.X)
             {
                 playerMovement = new Vector3(System.Math.Sign(moveX), 0f, 0f);
@@ -69,12 +69,25 @@ public class PlayerController : MonoBehaviour
                 playerMovement = new Vector3(0f, System.Math.Sign(moveY), 0f);
             }
 
-            // Start player position animation (move to next tile)
-            moveStartTime = Time.time;
-            startPos = transform.position;
-            targetPos = transform.position + playerMovement;
-            journeyLength = Vector3.Distance(startPos, targetPos);
-            isMoving = true;
+            // Determine if player is able to move or if an obstacle is in their way
+            // Cast ray from center of sprite
+            Vector3 raycastOrigin = new Vector3(transform.position.x + 0.5f, transform.position.y - 0.5f, transform.position.z);
+            RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, playerMovement, 1, colliderLayers);
+            // If an object is in the way
+            if (hit.collider != null)
+            {
+                playerMovement = Vector3.zero;
+                isMoving = false;
+            }
+            else
+            {
+                // Start player position animation (move to next tile)
+                moveStartTime = Time.time;
+                startPos = transform.position;
+                targetPos = transform.position + playerMovement;
+                journeyLength = Vector3.Distance(startPos, targetPos);
+                isMoving = true;
+            }
         }
         // If player is still moving, lerp their position
         else
