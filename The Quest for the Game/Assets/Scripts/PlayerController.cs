@@ -20,27 +20,25 @@ public class PlayerController : MonoBehaviour
     private float moveStartTime;
     private float journeyLength;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
     void FixedUpdate()
     {
-        // If player is not currently in the process of moving
+        // Ef leikmaður er ekki að hreyfa sig
         if (!isMoving)
         {
-            // Get user input
+            // Sækja skipanir frá notanda
             float moveX = Input.GetAxis("Horizontal");
             float moveY = Input.GetAxis("Vertical");
 
-            // If player is currently not moving along any axis, find the correct axis (prefer x if both are active)
+            // Ef leikmaður er ekki að hreyfa sig á neinum ás, finna réttan ás (x fær forgang)
             if (currentAxis == Axis.None)
             {
                 if (moveX != 0f)
@@ -52,13 +50,13 @@ public class PlayerController : MonoBehaviour
                     currentAxis = Axis.Y;
                 }
             }
-            // If player is currently walking around X/Y axis but has stopped
+            // Ef leikmaður var að hreyfa sig á X/Y ásnum en er nú stopp
             else if ((currentAxis == Axis.X && moveX == 0f) || (currentAxis == Axis.Y && moveY == 0f))
             {
                 currentAxis = Axis.None;
             }
 
-            // Define player movement based on axis
+            // Skilgreina hreyfingu leikmanns, byggt á ási
             Vector3 playerMovement = Vector3.zero;
             if (currentAxis == Axis.X)
             {
@@ -69,11 +67,11 @@ public class PlayerController : MonoBehaviour
                 playerMovement = new Vector3(0f, System.Math.Sign(moveY), 0f);
             }
 
-            // Determine if player is able to move or if an obstacle is in their way
-            // Cast ray from center of sprite
+            // Athuga hvort leikmaður geti hreyft sig eða hvort eitthvað sé í vegi hans
+            // Kasta geisla frá miðju sprite-ins
             Vector3 raycastOrigin = new Vector3(transform.position.x + 0.5f, transform.position.y - 0.5f, transform.position.z);
             RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, playerMovement, 1, colliderLayers);
-            // If an object is in the way
+            // Ef hlutur er í veginum
             if (hit.collider != null)
             {
                 playerMovement = Vector3.zero;
@@ -81,7 +79,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                // Start player position animation (move to next tile)
+                // Byrja að hreyfa leikmann á næstu flís
                 moveStartTime = Time.time;
                 startPos = transform.position;
                 targetPos = transform.position + playerMovement;
@@ -89,13 +87,13 @@ public class PlayerController : MonoBehaviour
                 isMoving = true;
             }
         }
-        // If player is still moving, lerp their position
+        // Ef leikmaður er enn að hreyfa sig, nota lerp til að stilla staðsetninguna
         else
         {
             float distCovered = (Time.time - moveStartTime) * walkSpeed;
             float fractionOfJourney = distCovered / journeyLength;
             transform.position = Vector3.Lerp(startPos, targetPos, fractionOfJourney);
-            // If player has reached target position, let them move again
+            // Ef leikmaðurinn er kominn þangað sem hann ætlaði sér að fara, leyfa honum að hreyfa sig aftur
             if (transform.position == targetPos)
             {
                 isMoving = false;
