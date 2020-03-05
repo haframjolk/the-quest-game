@@ -20,18 +20,30 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    void FixedUpdate()
+    {
+        // birtir næstu setningu ef playerinn ýtir á z
+        if (Input.GetButtonDown("Interact"))
+        {
+            DisplayNextSentence();
+            
+        }
+    }
+
     public void StartDialogue(Dialogue dialogue)
     {
+        // birtir dialogue box á skjáinn
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
         sentences.Clear();
-
+        //setur allar setningarnar í queue
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
+        
     }
 
     public void DisplayNextSentence()
@@ -41,12 +53,14 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-
+        //tekur setninguna úr queue
         string sentence = sentences.Dequeue();
+
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        
     }
-
+    // birtir textann í dialogue boxið
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
@@ -60,6 +74,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        // dialogue boxið fer af skjánum
         animator.SetBool("IsOpen", false);
     }
     
