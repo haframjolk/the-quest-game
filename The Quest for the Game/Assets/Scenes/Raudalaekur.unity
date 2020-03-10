@@ -1306,6 +1306,12 @@ MonoBehaviour:
   colliderLayers:
     serializedVersion: 2
     m_Bits: 256
+--- !u!4 &56957851 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5710409156842805869, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
+    type: 3}
+  m_PrefabInstance: {fileID: 56957845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &403158047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b29654edd7246ab8ce04aed5d77e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 895930627}
+  player: {fileID: 56957851}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1457,12 +1463,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5710409157696686958}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &895930627 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5710409156842805869, guid: 9abd9dc82c4fc4726b309ba4544b9445,
-    type: 3}
-  m_PrefabInstance: {fileID: 5710409157696686958}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &895930628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895930625}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95eef6f6328f545048075478a074769c, type: 3}
   m_Name: 
