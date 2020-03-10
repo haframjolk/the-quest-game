@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
-    //public AudioSource blib;
+    //public AudioSource blib; 
 
     public Animator animator;
 
