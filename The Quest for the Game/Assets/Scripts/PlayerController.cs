@@ -2,16 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Ásar til að passa upp á að hreyfing sé lögleg
 public enum Axis
 {
     X = 1,
     Y = -1,
     None = 0
 }
+// Áttir fyrir animation
+public enum Direction
+{
+    Left = -1,
+    Right = 1,
+    Up = 2,
+    Down = 4,
+    None = 0
+}
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
     public LayerMask colliderLayers;
+    private Animator animator;
     private Rigidbody2D rb2d;
     private Axis currentAxis = Axis.None;
     private bool isMoving = false;
@@ -23,6 +34,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -37,6 +49,8 @@ public class PlayerController : MonoBehaviour
             // Sækja skipanir frá notanda
             float moveX = Input.GetAxis("Horizontal");
             float moveY = Input.GetAxis("Vertical");
+
+            int moveSign = 0;
 
             // Ef leikmaður er ekki að hreyfa sig á neinum ás, finna réttan ás (x fær forgang)
             if (currentAxis == Axis.None)
@@ -55,16 +69,69 @@ public class PlayerController : MonoBehaviour
             {
                 currentAxis = Axis.None;
             }
+            
+            // Stilla animator parameter fyrir átt
+            else
+            {
+                // Er hreyfing pósitíf eða negatíf?
+                if (currentAxis == Axis.X)
+                {
+                    moveSign = System.Math.Sign(moveX);
+                }
+                else if (currentAxis == Axis.Y)
+                {
+                    moveSign = System.Math.Sign(moveY);
+                }
+
+                // Finna í hvaða átt leikmaðurinn snýr
+                Direction currentDir = Direction.None;
+                if (currentAxis == Axis.X)
+                {
+                    if (moveSign == 1)
+                    {
+                        currentDir = Direction.Right;
+                    }
+                    else
+                    {
+                        currentDir = Direction.Left;
+                    }
+                }
+                else
+                {
+                    if (moveSign == 1)
+                    {
+                        currentDir = Direction.Up;
+                    }
+                    else
+                    {
+                        currentDir = Direction.Down;
+                    }
+                }
+                if (currentDir != Direction.None)
+                {
+                    animator.SetInteger("Direction", (int)currentDir);
+                }
+            }
+
+            // Stilla animator parameter yfir hvort leikmaður sé að labba eða ekki
+            if (moveX != 0f || moveY != 0f)
+            {
+                animator.SetBool("Walking", true);
+            }
+            else
+            {
+                animator.SetBool("Walking", false);
+            }
 
             // Skilgreina hreyfingu leikmanns, byggt á ási
             Vector3 playerMovement = Vector3.zero;
             if (currentAxis == Axis.X)
             {
-                playerMovement = new Vector3(System.Math.Sign(moveX), 0f, 0f);
+                playerMovement = new Vector3(moveSign, 0f, 0f);
             }
             else if (currentAxis == Axis.Y)
             {
-                playerMovement = new Vector3(0f, System.Math.Sign(moveY), 0f);
+                playerMovement = new Vector3(0f, moveSign, 0f);
             }
 
             // Athuga hvort leikmaður geti hreyft sig eða hvort eitthvað sé í vegi hans
