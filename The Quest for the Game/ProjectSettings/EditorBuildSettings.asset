@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: c0f6f5a6b631a45b18b41b7338add1f9
+  - enabled: 1
+    path: Assets/Scenes/SvennzHouse.unity
+    guid: 8b55fc5cb6e368440915a9abf584079b
+  - enabled: 1
+    path: Assets/Scenes/Raudalaekur.unity
+    guid: f453bd9eaddd4564284015d186535b0d
+  - enabled: 1
+    path: Assets/Scenes/NewZealand.unity
+    guid: bdac03f0aadf9684a9e836d13ada3bc2
   m_configObjects: {}
