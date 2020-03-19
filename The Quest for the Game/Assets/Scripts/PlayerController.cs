@@ -31,6 +31,12 @@ public class PlayerController : MonoBehaviour
     private float moveStartTime;
     private float journeyLength;
 
+    // Stilla hvert leikmaður snýr (fyrir timeline events)
+    public void SetAnimatorDirection(int direction)
+    {
+        animator.SetInteger("Direction", direction);
+    }
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
