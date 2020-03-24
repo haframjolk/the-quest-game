@@ -2471,7 +2471,6 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 34737ba6b359845ef9d6620e8d220d15, type: 2}
     - {fileID: 11400000, guid: 6f07693df05b841faa08c74356ce8e63, type: 2}
-    - {fileID: 0}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2497,19 +2496,6 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1805697172}
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: my name victor
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1901660725
