@@ -157,12 +157,14 @@ PlayableDirector:
     value: {fileID: 5710409157696686959}
   - key: {fileID: -3429858447051092241, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
     value: {fileID: 5710409157696686959}
-  - key: {fileID: 2766247763366511436, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
-    value: {fileID: 56957848}
   - key: {fileID: 5213345085368281187, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
     value: {fileID: 56957848}
   - key: {fileID: -1893845271648086884, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
     value: {fileID: 895930625}
+  - key: {fileID: -2124819807815077654, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
+    value: {fileID: 56957853}
+  - key: {fileID: 2872248797890470270, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
+    value: {fileID: 895930630}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &29794342
