@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 8381091748744340958}
   - component: {fileID: 8381091748744340957}
   m_Layer: 5
-  m_Name: TestButton
+  m_Name: DialogueTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
