@@ -14,12 +14,12 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    // Stilla hvort box sjáist
     public void SetActive(bool state)
     {
         animator.SetBool("IsOpen", state);
     }
     
-    // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
