@@ -155,7 +155,6 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 6144b67045d6944878c164e4f15db150, type: 2}
     - {fileID: 11400000, guid: 934d63b74bb774eadbd01690eebe8400, type: 2}
-    - {fileID: 0}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -183,8 +182,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls: []
 --- !u!320 &29794341
 PlayableDirector:
   m_ObjectHideFlags: 0
