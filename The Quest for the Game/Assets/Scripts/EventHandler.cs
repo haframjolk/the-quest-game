@@ -5,26 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class EventHandler : MonoBehaviour
 {
+    // Hlaða inn senu
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     // Hlaða inn aðalvalmynd
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        LoadScene("MainMenu");
     }
 
     // Hlaða inn senum
     public void LoadSvennzHouse()
     {
-        SceneManager.LoadScene("SvennzHouse");
+        LoadScene("SvennzHouse");
     }
 
     public void LoadRaudalaekur()
     {
-        SceneManager.LoadScene("Raudalaekur");
+        LoadScene("Raudalaekur");
     }
 
     public void LoadNewZealand()
     {
-        SceneManager.LoadScene("NewZealand");
+        LoadScene("NewZealand");
     }
 
     void Update()
