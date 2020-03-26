@@ -79,6 +79,7 @@ MonoBehaviour:
   nameText: {fileID: 8381091748843349943}
   dialogueText: {fileID: 8381091748429309323}
   animator: {fileID: 8381091748949707274}
+  timelineController: {fileID: 0}
 --- !u!114 &2359784737240652997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,8 +113,8 @@ MonoBehaviour:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8381091747750904263}
-          m_MethodName: SetActive
-          m_Mode: 6
+          m_MethodName: EndDialogue
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -11,14 +11,9 @@ public class DialogueManager : MonoBehaviour
     //public AudioSource blib; 
 
     public Animator animator;
+    public TimelineController timelineController;
 
     private Queue<string> sentences;
-
-    // Stilla hvort box sjáist
-    public void SetActive(bool state)
-    {
-        animator.SetBool("IsOpen", state);
-    }
     
     void Start()
     {
@@ -31,7 +26,6 @@ public class DialogueManager : MonoBehaviour
         if (Input.GetButtonDown("Interact"))
         {
             DisplayNextSentence();
-            
         }
     }
 
@@ -66,7 +60,7 @@ public class DialogueManager : MonoBehaviour
         
     }
     // birtir textann í dialogue boxið
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
         foreach(char letter in sentence.ToCharArray())
@@ -77,10 +71,14 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         // dialogue boxið fer af skjánum
         animator.SetBool("IsOpen", false);
+        if (timelineController)
+        {
+            timelineController.PlayTimeline();
+        }
     }
     
 }
