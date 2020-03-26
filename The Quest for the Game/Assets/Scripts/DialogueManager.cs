@@ -31,6 +31,12 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        // Pása tímalínu ef hún er tengd
+        if (timelineController)
+        {
+            timelineController.PauseTimeline();
+        }
+        
         // Birtir dialogue box á skjáinn
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
