@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        // birtir næstu setningu ef playerinn ýtir á z
+        // Birtir næstu setningu ef playerinn ýtir á Interact (sjálfgefið Z)
         if (Input.GetButtonDown("Interact"))
         {
             DisplayNextSentence();
@@ -31,12 +31,12 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        // birtir dialogue box á skjáinn
+        // Birtir dialogue box á skjáinn
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
         sentences.Clear();
-        //setur allar setningarnar í queue
+        // Setur allar setningar í queue
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -52,14 +52,14 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        //tekur setninguna úr queue
+        // Tekur setningu úr queue
         string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         
     }
-    // birtir textann í dialogue boxið
+    // Birtir textann í dialogue boxið
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
@@ -73,8 +73,9 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        // dialogue boxið fer af skjánum
+        // Dialogue boxið fer af skjánum
         animator.SetBool("IsOpen", false);
+        // Ef tímalína er tengd við boxið, halda áfram að spila hana
         if (timelineController)
         {
             timelineController.PlayTimeline();
