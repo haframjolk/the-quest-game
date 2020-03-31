@@ -18,6 +18,19 @@ public enum Direction
     Down = 4,
     None = 0
 }
+// Staðsetning og átt, til að geta hreyft þræl í samræmi við hreyfingar aðalleikmanns
+public class SlaveTarget
+{
+    public Vector3 pos;
+    public Direction direction;
+    
+    public SlaveTarget(Vector3 pos, Direction direction)
+    {
+        this.pos = pos;
+        this.direction = direction;
+    }
+}
+
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
@@ -30,17 +43,16 @@ public class PlayerController : MonoBehaviour
     private Vector3 targetPos;
     private float moveStartTime;
     private float journeyLength;
+    public SlavePlayerController slavePlayer;
+    private List<SlaveTarget> savedSlaveTargets;  // Notað til að halda utan um fyrri staðsetningar og animator directions leikmanns svo þræll (slave) geti elt
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        savedSlaveTargets = new List<SlaveTarget>();
     }
 
-    void Update()
-    {
-        
-    }
     void FixedUpdate()
     {
         // Ef leikmaður er ekki að hreyfa sig
@@ -51,6 +63,8 @@ public class PlayerController : MonoBehaviour
             float moveY = Input.GetAxis("Vertical");
 
             int moveSign = 0;
+
+            Direction currentDir = Direction.None;
 
             // Ef leikmaður er ekki að hreyfa sig á neinum ás, finna réttan ás (x fær forgang)
             if (currentAxis == Axis.None)
@@ -84,7 +98,6 @@ public class PlayerController : MonoBehaviour
                 }
 
                 // Finna í hvaða átt leikmaðurinn snýr
-                Direction currentDir = Direction.None;
                 if (currentAxis == Axis.X)
                 {
                     if (moveSign == 1)
@@ -152,6 +165,18 @@ public class PlayerController : MonoBehaviour
                 targetPos = transform.position + playerMovement;
                 journeyLength = Vector3.Distance(startPos, targetPos);
                 isMoving = true;
+                
+                // Ef þræll er til staðar og leikmaður er á leið á aðra flís, halda utan um þá hreyfingu
+                if (slavePlayer && startPos != targetPos)
+                {
+                    savedSlaveTargets.Add(new SlaveTarget(targetPos, currentDir));
+                    // Ef leikmaður hefur hreyft sig nógu oft hreyfir þrællinn sig í samræmi við það
+                    if (savedSlaveTargets.Count > slavePlayer.stepOffset)
+                    {
+                        slavePlayer.MoveTo(savedSlaveTargets[0], walkSpeed);
+                        savedSlaveTargets.RemoveAt(0);
+                    }
+                }
             }
         }
         // Ef leikmaður er enn að hreyfa sig, nota lerp til að stilla staðsetninguna

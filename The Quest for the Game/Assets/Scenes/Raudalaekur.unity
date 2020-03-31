@@ -1308,7 +1308,7 @@ PrefabInstance:
     - target: {fileID: 5710409156842805869, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5710409156842805869, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
@@ -1384,6 +1384,7 @@ MonoBehaviour:
   colliderLayers:
     serializedVersion: 2
     m_Bits: 256
+  slavePlayer: {fileID: 0}
 --- !u!95 &56957848 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5710409156842805864, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
@@ -1402,6 +1403,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &56957854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56957846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c651152d39f14d24824dd9cce50b63c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepOffset: 2
 --- !u!1 &403158047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1647,7 @@ MonoBehaviour:
   colliderLayers:
     serializedVersion: 2
     m_Bits: 256
+  slavePlayer: {fileID: 56957854}
 --- !u!114 &895930630 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7778344489071608644, guid: 9abd9dc82c4fc4726b309ba4544b9445,
@@ -31658,7 +31673,7 @@ PrefabInstance:
     - target: {fileID: 5710409156842805869, guid: 9abd9dc82c4fc4726b309ba4544b9445,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5710409156842805869, guid: 9abd9dc82c4fc4726b309ba4544b9445,
         type: 3}
