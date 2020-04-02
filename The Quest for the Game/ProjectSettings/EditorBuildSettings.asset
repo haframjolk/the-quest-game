@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewZealand.unity
     guid: bdac03f0aadf9684a9e836d13ada3bc2
+  - enabled: 1
+    path: Assets/Scenes/YonasCastle.unity
+    guid: 446df7de790372141a08186ee8c18367
   m_configObjects: {}
