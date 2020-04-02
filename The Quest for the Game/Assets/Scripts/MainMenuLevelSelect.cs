@@ -17,4 +17,8 @@ public class MainMenuLevelSelect : MonoBehaviour
     {
         SceneManager.LoadScene("NewZealand");
     }
+    public void GoToYonasCastle()
+    {
+        SceneManager.LoadScene("YonasCastle");
+    }
 }
