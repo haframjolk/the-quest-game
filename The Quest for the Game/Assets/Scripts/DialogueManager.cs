@@ -72,7 +72,11 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            audioSource.PlayOneShot(blibClips[currentAudioClipIndex++ % blibClips.Length]);
+            // Ef blibClips eru til staðar, spila hljóð
+            if (blibClips.Length > 0)
+            {
+                audioSource.PlayOneShot(blibClips[currentAudioClipIndex++ % blibClips.Length]);
+            }
             yield return new WaitForSeconds(0.04f);
             // yield return null;
         }
