@@ -7,17 +7,17 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
-
-    //public AudioSource blib; 
-
     public Animator animator;
     public TimelineController timelineController;
-
+    public AudioClip[] blibClips;
     private Queue<string> sentences;
+    private int currentAudioClipIndex;
+    private AudioSource audioSource;
     
     void Start()
     {
         sentences = new Queue<string>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -69,11 +69,12 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            //blib.Play();
-            yield return null;
+            audioSource.PlayOneShot(blibClips[currentAudioClipIndex++ % blibClips.Length]);
+            yield return new WaitForSeconds(0.04f);
+            // yield return null;
         }
     }
 
