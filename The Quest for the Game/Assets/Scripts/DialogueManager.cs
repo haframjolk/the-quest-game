@@ -77,6 +77,7 @@ public class DialogueManager : MonoBehaviour
             {
                 audioSource.PlayOneShot(blibClips[currentAudioClipIndex++ % blibClips.Length]);
             }
+            // TODO: Experiment with wait times, disable interact button while still writing?
             yield return new WaitForSeconds(0.04f);
             // yield return null;
         }
