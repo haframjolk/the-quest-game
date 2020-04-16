@@ -31710,12 +31710,12 @@ PrefabInstance:
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.data[10].sentences.Array.data[0]
-      value: "Yonas has always wanted to find out\u2026"
+      value: Yonas has always wanted to find out...
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.data[10].sentences.Array.data[1]
-      value: "\u2026what the difference between Coke and Pepsi really is."
+      value: what the difference between Coke and Pepsi really is.
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
