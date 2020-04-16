@@ -10,9 +10,12 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public TimelineController timelineController;
     public AudioClip[] blibClips;
+    public float charInterval = 0.05f;  // Hversu margar sekúndur líða milli þess að hver stafur er birtur (í upphafi)
+    private float currentCharInterval;  // Hversu margar sekúndur eiga að líða fyrir núverandi setningu (breytilegt)
     private Queue<string> sentences;
     private int currentAudioClipIndex;
     private AudioSource audioSource;
+    private bool sentenceFinished = false;
     
     void Start()
     {
@@ -22,10 +25,19 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        // Birtir næstu setningu ef playerinn ýtir á Interact (sjálfgefið Z)
+        // Ef spilarinn ýtir á Interact (sjálfgefið Z)
         if (Input.GetButtonDown("Interact"))
         {
-            DisplayNextSentence();
+            // Ef setningin er búin, sýna næstu setningu
+            if (sentenceFinished)
+            {
+                DisplayNextSentence();
+            }
+            // Ef setningin er ekki búin og hún er á venjulegum hraða, skrifa restina tvöfalt hraðar
+            else if (currentCharInterval == charInterval)
+            {
+                currentCharInterval /= 2;
+            }
         }
     }
 
@@ -48,7 +60,6 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
-        
     }
 
     public void DisplayNextSentence()
@@ -62,8 +73,10 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
+        // currentCharInterval núllstillist við upphaf hverrar setningar
+        currentCharInterval = charInterval;
+        sentenceFinished = false;
         StartCoroutine(TypeSentence(sentence));
-        
     }
     // Birtir textann í dialogue boxið
     IEnumerator TypeSentence(string sentence)
@@ -77,10 +90,10 @@ public class DialogueManager : MonoBehaviour
             {
                 audioSource.PlayOneShot(blibClips[currentAudioClipIndex++ % blibClips.Length]);
             }
-            // TODO: Experiment with wait times, disable interact button while still writing?
-            yield return new WaitForSeconds(0.04f);
-            // yield return null;
+            yield return new WaitForSeconds(currentCharInterval);
         }
+        // Stillist þegar setning er búin
+        sentenceFinished = true;
     }
 
     public void EndDialogue()
@@ -93,5 +106,4 @@ public class DialogueManager : MonoBehaviour
             timelineController.PlayTimeline();
         }
     }
-    
 }

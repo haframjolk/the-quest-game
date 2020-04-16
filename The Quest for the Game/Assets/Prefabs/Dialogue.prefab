@@ -85,6 +85,7 @@ MonoBehaviour:
   blibClips:
   - {fileID: 8300000, guid: 5aaf6b97b0d3b56419c30bc5653bd571, type: 3}
   - {fileID: 8300000, guid: 7012301d52e6e8442b1ddca69c6ef03a, type: 3}
+  charInterval: 0.05
 --- !u!114 &2359784737240652997
 MonoBehaviour:
   m_ObjectHideFlags: 0
