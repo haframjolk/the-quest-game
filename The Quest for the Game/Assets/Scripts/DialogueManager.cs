@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // Birtir næstu setningu ef playerinn ýtir á Interact (sjálfgefið Z)
         if (Input.GetButtonDown("Interact"))
