@@ -200,6 +200,10 @@ PlayableDirector:
     value: {fileID: 895930630}
   - key: {fileID: -4993815339042407285, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
     value: {fileID: 2113904154}
+  - key: {fileID: 3904306949681487510, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
+    value: {fileID: 519420034}
+  - key: {fileID: -4427945137020366716, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
+    value: {fileID: 519420034}
   m_ExposedReferences:
     m_References:
     - a8a4f25840f104b789f116ed6d2b7f56: {fileID: 1995815023}
@@ -1328,7 +1332,7 @@ PrefabInstance:
     - target: {fileID: 5710409156842805869, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5710409156842805869, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
@@ -1395,7 +1399,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56957846}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95eef6f6328f545048075478a074769c, type: 3}
   m_Name: 
@@ -1409,6 +1413,12 @@ MonoBehaviour:
 --- !u!95 &56957848 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5710409156842805864, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
+    type: 3}
+  m_PrefabInstance: {fileID: 56957845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &56957852 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5710409156842805869, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
     type: 3}
   m_PrefabInstance: {fileID: 56957845}
   m_PrefabAsset: {fileID: 0}
@@ -1431,7 +1441,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56957846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c651152d39f14d24824dd9cce50b63c, type: 3}
   m_Name: 
@@ -1498,6 +1508,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1526,6 +1537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 895930631}
+  lerpSpeed: 1
+  isFrozen: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1603,6 +1616,63 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 0b59389bccb2a45e88ee7176b6db5f51, type: 2}
+    - {fileID: 11400000, guid: 80efef086c1ff43e1a99d6aef1130a40, type: 2}
+    - {fileID: 11400000, guid: 26890b6c1c5ee4c6e952f979140c539a, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 519420030}
+          m_MethodName: SetMainPlayer
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 56957852}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 519420030}
+          m_MethodName: SetFrozen
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 519420030}
+          m_MethodName: SetFrozen
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &539319743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,7 +1979,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895930625}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95eef6f6328f545048075478a074769c, type: 3}
   m_Name: 
