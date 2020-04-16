@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
     public LayerMask colliderLayers;
+    public bool isFrozen = false;
     private Animator animator;
     private Rigidbody2D rb2d;
     private Axis currentAxis = Axis.None;
@@ -53,8 +54,18 @@ public class PlayerController : MonoBehaviour
         savedSlaveTargets = new List<SlaveTarget>();
     }
 
+    public void SetFrozen(bool value)
+    {
+        isFrozen = value;
+    }
+
     void FixedUpdate()
     {
+        // Ekki leyfa frosnum leikmanni að hreyfa sig
+        if (isFrozen)
+        {
+            return;
+        }
         // Ef leikmaður er ekki að hreyfa sig
         if (!isMoving)
         {
