@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         moveY = Input.GetAxis("Vertical");
 
         // Ef notandi ýtir á Interact-takkann, athuga hvort interactable hlutur sé innan seilingar
-        if (Input.GetButton("Interact"))
+        if (Input.GetButtonDown("Interact"))
         {
             // Finna út í hvaða átt leikmaður snýr
             Direction currentDir = (Direction)animator.GetInteger("Direction");
