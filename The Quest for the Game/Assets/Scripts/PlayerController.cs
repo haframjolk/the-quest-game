@@ -38,12 +38,15 @@ public class PlayerController : MonoBehaviour
     public bool isFrozen = false;
     private Animator animator;
     private Rigidbody2D rb2d;
+    private float moveX;
+    private float moveY;
     private Axis currentAxis = Axis.None;
     private bool isMoving = false;
     private Vector3 startPos;
     private Vector3 targetPos;
     private float moveStartTime;
     private float journeyLength;
+    private bool isFacingInteractable = false;
     public SlavePlayerController slavePlayer;
     private List<SlaveTarget> savedSlaveTargets;  // Notað til að halda utan um fyrri staðsetningar og animator directions leikmanns svo þræll (slave) geti elt
 
@@ -59,6 +62,13 @@ public class PlayerController : MonoBehaviour
         isFrozen = value;
     }
 
+    void Update()
+    {
+        // Sækja hreyfiskipanir frá notanda
+        moveX = Input.GetAxis("Horizontal");
+        moveY = Input.GetAxis("Vertical");
+    }
+
     void FixedUpdate()
     {
         // Ekki leyfa frosnum leikmanni að hreyfa sig
@@ -69,10 +79,6 @@ public class PlayerController : MonoBehaviour
         // Ef leikmaður er ekki að hreyfa sig
         if (!isMoving)
         {
-            // Sækja skipanir frá notanda
-            float moveX = Input.GetAxis("Horizontal");
-            float moveY = Input.GetAxis("Vertical");
-
             int moveSign = 0;
 
             Direction currentDir = Direction.None;
@@ -167,6 +173,14 @@ public class PlayerController : MonoBehaviour
             {
                 playerMovement = Vector3.zero;
                 isMoving = false;
+                if (hit.collider.tag == "Interactable")
+                {
+                    isFacingInteractable = true;
+                }
+                else
+                {
+                    isFacingInteractable = false;
+                }
             }
             else
             {
