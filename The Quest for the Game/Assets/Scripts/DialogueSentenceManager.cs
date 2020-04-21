@@ -21,6 +21,9 @@ public class DialogueSentenceManager : MonoBehaviour
     // Sýna næsta dialogue-box (hækka id um 1)
     public void TriggerNextDialogue()
     {
-        TriggerDialogue(currentId++);
+        if (dialogueArray.Length > currentId)
+        {
+            TriggerDialogue(currentId++);
+        }
     }
 }

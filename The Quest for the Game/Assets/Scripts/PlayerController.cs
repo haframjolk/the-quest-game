@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 targetPos;
     private float moveStartTime;
     private float journeyLength;
-    private bool isFacingInteractable = false;
     public SlavePlayerController slavePlayer;
     private List<SlaveTarget> savedSlaveTargets;  // Notað til að halda utan um fyrri staðsetningar og animator directions leikmanns svo þræll (slave) geti elt
 
@@ -67,6 +66,40 @@ public class PlayerController : MonoBehaviour
         // Sækja hreyfiskipanir frá notanda
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
+
+        // Ef notandi ýtir á Interact-takkann, athuga hvort interactable hlutur sé innan seilingar
+        if (Input.GetButton("Interact"))
+        {
+            // Finna út í hvaða átt leikmaður snýr
+            Direction currentDir = (Direction)animator.GetInteger("Direction");
+            Vector3 raycastDir = Vector3.zero;
+            if (currentDir == Direction.Left)
+            {
+                raycastDir = Vector3.left;
+            }
+            else if (currentDir == Direction.Right)
+            {
+                raycastDir = Vector3.right;
+            }
+            else if (currentDir == Direction.Up)
+            {
+                raycastDir = Vector3.up;
+            }
+            else if (currentDir == Direction.Down)
+            {
+                raycastDir = Vector3.down;
+            }
+            // Raycast
+            Vector3 raycastOrigin = new Vector3(transform.position.x + 0.5f, transform.position.y - 0.5f, transform.position.z);
+            RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, raycastDir, 1, colliderLayers);
+            // Ef finnst interactable hlutur, kalla á Interact() aðferðina
+            if (hit.collider != null && hit.collider.tag == "Interactable")
+            {
+                InteractableController interactable = hit.collider.GetComponent<InteractableController>();
+                interactable.Interact();
+                // Debug.Log("Player interacted with object " + interactable.ToString());
+            }
+        }
     }
 
     void FixedUpdate()
@@ -173,14 +206,6 @@ public class PlayerController : MonoBehaviour
             {
                 playerMovement = Vector3.zero;
                 isMoving = false;
-                if (hit.collider.tag == "Interactable")
-                {
-                    isFacingInteractable = true;
-                }
-                else
-                {
-                    isFacingInteractable = false;
-                }
             }
             else
             {
