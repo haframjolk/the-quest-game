@@ -22,7 +22,7 @@ public class BreakableObjectController : InteractableController
     {
         if (isBreakable)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         // Spila hljóð ef ekki er hægt að brjóta hlut
         else if (errorClip && !audioSource.isPlaying)
