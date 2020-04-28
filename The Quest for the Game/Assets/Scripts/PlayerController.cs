@@ -33,7 +33,7 @@ public class SlaveTarget
 
 public class PlayerController : MonoBehaviour
 {
-    public float walkSpeed;
+    public float walkSpeed = 3;
     public LayerMask colliderLayers;
     public bool isFrozen = false;
     private Animator animator;
