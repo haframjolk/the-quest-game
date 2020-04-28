@@ -153,12 +153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueArray:
-  - name: Svennz
+  - name: SVENNZ
     sentences:
     - Hi there, I'm Svennz!
     - ...
     - I have nothing else to say.
-  - name: Svenn
+  - name: SVENN
     sentences:
     - My name is Svenn.
     - That's all.
