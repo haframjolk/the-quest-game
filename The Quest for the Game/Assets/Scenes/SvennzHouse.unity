@@ -378,6 +378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1313477726}
+  lerpSpeed: 1
+  isFrozen: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2393,7 +2395,7 @@ PrefabInstance:
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.data[1].name
-      value: Svennz
+      value: SVENNZ
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
@@ -2404,6 +2406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueArray.Array.data[1].sentences.Array.data[1]
       value: I'm coming!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
+        type: 3}
+      propertyPath: dialogueArray.Array.data[0].name
+      value: SVENNZ
       objectReference: {fileID: 0}
     - target: {fileID: 5995346092041748684, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
