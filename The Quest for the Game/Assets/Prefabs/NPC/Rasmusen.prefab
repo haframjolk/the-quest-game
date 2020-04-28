@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7778344489071608644}
   - component: {fileID: 12642625000549971}
   - component: {fileID: 1001680187855331335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rasmusen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
