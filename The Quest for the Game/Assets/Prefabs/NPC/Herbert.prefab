@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5710409156842805864}
   - component: {fileID: 7778344489071608644}
   - component: {fileID: 12642625000549971}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Herbert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
