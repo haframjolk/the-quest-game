@@ -143,6 +143,9 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 41e0165163d6a46c68de71c06d4e4974, type: 2}
     - {fileID: 11400000, guid: dc450c28e60af45569b0e8832c0076cb, type: 2}
     - {fileID: 11400000, guid: 91d9fd4b9f98f4a45b0176162f164202, type: 2}
+    - {fileID: 11400000, guid: 68b4a6b823ecd4982a3046a6bfa46e23, type: 2}
+    - {fileID: 11400000, guid: 6ca539af0e4ee4c15b95703e6053a81d, type: 2}
+    - {fileID: 11400000, guid: d502e0b01ad494182a088b19fbf164fd, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -188,6 +191,45 @@ MonoBehaviour:
         - m_Target: {fileID: 12642625000549971}
           m_MethodName: SetAnimatorDirection
           m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_MethodName: SetFrozen
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_MethodName: SetFrozen
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5710409156842805871}
+          m_MethodName: SetActive
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
