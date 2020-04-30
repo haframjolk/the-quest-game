@@ -8,6 +8,11 @@ public class DialogueSentenceManager : MonoBehaviour
     private DialogueManager dialogueManager;
     private int currentId = 0;
 
+    public void ResetCurrentId()
+    {
+        currentId = 0;
+    }
+
     void Start()
     {
         dialogueManager = GetComponent<DialogueManager>();

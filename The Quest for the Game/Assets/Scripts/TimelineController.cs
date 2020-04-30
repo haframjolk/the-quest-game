@@ -12,6 +12,11 @@ public class TimelineController : MonoBehaviour
         director = GetComponent<PlayableDirector>();    
     }
 
+    public void StopTimeline()
+    {
+        director.Stop();
+    }
+
     public void PauseTimeline()
     {
         // Minnkar hraðann á tímalínunni í 0 svo hún hætti að hreyfast en hætti þó ekki að vera „evaluated“
