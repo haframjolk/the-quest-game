@@ -61,6 +61,12 @@ public class PlayerController : MonoBehaviour
         isFrozen = value;
     }
 
+    public void RoundPosition()
+    {
+        Vector3 startPos = transform.position;
+        transform.position = new Vector3(Mathf.Round(startPos.x), Mathf.Round(startPos.y), Mathf.Round(startPos.z));
+    }
+
     void Update()
     {
         // Sækja hreyfiskipanir frá notanda

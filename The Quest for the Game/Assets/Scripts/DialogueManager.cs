@@ -25,8 +25,8 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        // Ef spilarinn ýtir á Interact (sjálfgefið Z)
-        if (Input.GetButtonDown("Interact"))
+        // Ef spilarinn ýtir á Interact (sjálfgefið Z) og dialogue-box er virkt
+        if (Input.GetButtonDown("Interact") && animator.GetBool("IsOpen"))
         {
             // Ef setningin er búin, sýna næstu setningu
             if (sentenceFinished)
