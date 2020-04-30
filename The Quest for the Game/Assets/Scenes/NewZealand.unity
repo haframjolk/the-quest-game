@@ -10937,6 +10937,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Svennz
       objectReference: {fileID: 0}
+    - target: {fileID: 5710409156842805871, guid: 9abd9dc82c4fc4726b309ba4544b9445,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7778344489071608644, guid: 9abd9dc82c4fc4726b309ba4544b9445,
         type: 3}
       propertyPath: m_Events.m_Events.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
