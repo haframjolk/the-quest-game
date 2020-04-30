@@ -1139,7 +1139,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 810197476}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1306135287}
+        m_MethodName: OnAttackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &810197476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,7 +1411,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1057797489}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1306135287}
+        m_MethodName: OnHealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1057797489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,7 +1536,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1810047303}
   m_FillRect: {fileID: 86824534}
   m_HandleRect: {fileID: 1810047302}
@@ -1537,6 +1559,7 @@ GameObject:
   - component: {fileID: 1223928029}
   - component: {fileID: 1223928031}
   - component: {fileID: 1223928030}
+  - component: {fileID: 1223928032}
   m_Layer: 5
   m_Name: EnemyBattleHud
   m_TagString: Untagged
@@ -1601,6 +1624,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223928028}
   m_CullTransparentMesh: 0
+--- !u!114 &1223928032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223928028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270a52f3ca4564d4a9722391d108d84b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 321898302}
+  hpSlider: {fileID: 1959071530}
 --- !u!1 &1306135286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,6 +1673,9 @@ MonoBehaviour:
     type: 3}
   playerBattleStation: {fileID: 1864945771}
   enemyBattleStation: {fileID: 375609480}
+  dialogueText: {fileID: 1602728791}
+  playerHUD: {fileID: 1912619669}
+  enemyHUD: {fileID: 1223928032}
   state: 0
 --- !u!4 &1306135288
 Transform:
@@ -2377,6 +2417,7 @@ GameObject:
   - component: {fileID: 1912619666}
   - component: {fileID: 1912619668}
   - component: {fileID: 1912619667}
+  - component: {fileID: 1912619669}
   m_Layer: 5
   m_Name: PlayerBattleHud
   m_TagString: Untagged
@@ -2441,6 +2482,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912619665}
   m_CullTransparentMesh: 0
+--- !u!114 &1912619669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912619665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270a52f3ca4564d4a9722391d108d84b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 799254968}
+  hpSlider: {fileID: 1116808973}
 --- !u!1 &1959071528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,7 +2573,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1502894400}
   m_FillRect: {fileID: 1517451090}
   m_HandleRect: {fileID: 1502894399}
