@@ -61,10 +61,21 @@ public class PlayerController : MonoBehaviour
         isFrozen = value;
     }
 
+    public Vector3 GetRoundPosition(Vector3 startPos)
+    {
+        return new Vector3(Mathf.Round(startPos.x), Mathf.Round(startPos.y), Mathf.Round(startPos.z));
+    }
+
     public void RoundPosition()
     {
+        // Lerpa leikmann að rúnnaðri staðsetningu
         Vector3 startPos = transform.position;
-        transform.position = new Vector3(Mathf.Round(startPos.x), Mathf.Round(startPos.y), Mathf.Round(startPos.z));
+        // Byrja að hreyfa leikmann á næstu flís
+        moveStartTime = Time.time;
+        startPos = transform.position;
+        targetPos = GetRoundPosition(transform.position);
+        journeyLength = Vector3.Distance(startPos, targetPos);
+        isMoving = true;
     }
 
     void Update()
