@@ -9,6 +9,8 @@ public class BattleButtonController : MonoBehaviour
     public Image selector;
     public Canvas canvas;
     public AudioClip switchClip;
+    public AudioClip errorClip;
+    public BattleSystem battleSystem;
     private AudioSource audioSource;
     private int activeButtonId = 0;
     private bool inputEnabled = true;
@@ -49,8 +51,15 @@ public class BattleButtonController : MonoBehaviour
         // Ef leikmaður velur attack/heal
         if (Input.GetButtonDown("Submit"))
         {
-            activeButton.onClick.Invoke();
-            audioSource.PlayOneShot(switchClip);
+            if (battleSystem.state == BattleState.PLAYERTURN)
+            {
+                activeButton.onClick.Invoke();
+                audioSource.PlayOneShot(switchClip);
+            }
+            else
+            {
+                audioSource.PlayOneShot(errorClip);
+            }
         }
     }
 }
