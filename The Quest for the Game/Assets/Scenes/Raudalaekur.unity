@@ -2022,7 +2022,6 @@ MonoBehaviour:
   isActive: 0
   timeline: {fileID: 1579396746}
   caughtMessageTimeline: {fileID: 118404530}
-  rasmusenDialogue: {fileID: 1507905601}
 --- !u!114 &552261813 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7778344489071608644, guid: 642b1c50f30b444df892aaa31976755a,
@@ -2210,7 +2209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &840601443
 Transform:
   m_ObjectHideFlags: 0
@@ -9275,18 +9274,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1507905599}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1507905601 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1507905599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03e78a627e2264ca991ee9a5cf0a9f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1507905602 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2359784737240652997, guid: e9463f791046f44879a123c09185f3bb,
