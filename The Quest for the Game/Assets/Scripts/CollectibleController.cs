@@ -36,7 +36,7 @@ public class CollectibleController : InteractableController
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Renderer>().enabled = false;
         // Eyða honum þegar hljóðið er búið að spilast
-        StartCoroutine("WaitThenDestroy");
+        StartCoroutine(WaitThenDestroy());
     }
     public override void Interact()
     {

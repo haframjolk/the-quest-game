@@ -42,7 +42,7 @@ public class BreakableObjectController : InteractableController
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Renderer>().enabled = false;
             // Eyða honum þegar brothljóðið er búið að spilast
-            StartCoroutine("WaitThenDestroy");
+            StartCoroutine(WaitThenDestroy());
         }
         // Spila hljóð ef ekki er hægt að brjóta hlut
         else if (errorClip && !audioSource.isPlaying)
