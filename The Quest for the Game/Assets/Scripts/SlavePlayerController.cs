@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlavePlayerController : MonoBehaviour
 {
-    public int stepOffset;
+    public int stepOffset = 2;
     private float walkSpeed;
     private float moveStartTime;
     private Vector3 startPos;

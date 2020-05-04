@@ -521,6 +521,8 @@ MonoBehaviour:
   colliderLayers:
     serializedVersion: 2
     m_Bits: 768
+  isFrozen: 0
+  slavePlayer: {fileID: 895930626}
 --- !u!4 &56957851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5710409156842805869, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
@@ -22601,6 +22603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 56957851}
+  lerpSpeed: 1
+  isFrozen: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -27546,6 +27550,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5710409157696686958}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &895930626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895930625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c651152d39f14d24824dd9cce50b63c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepOffset: 2
 --- !u!114 &895930628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27562,6 +27579,8 @@ MonoBehaviour:
   colliderLayers:
     serializedVersion: 2
     m_Bits: 768
+  isFrozen: 0
+  slavePlayer: {fileID: 0}
 --- !u!1 &904117390
 GameObject:
   m_ObjectHideFlags: 0
