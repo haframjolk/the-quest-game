@@ -23,8 +23,13 @@ public class BattleSystem : MonoBehaviour
 
     public BattleState state;
 
+    public AudioClip hitSound;
+    public AudioClip healSound;
+    private AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
@@ -54,6 +59,7 @@ public class BattleSystem : MonoBehaviour
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
         enemyHUD.SetHP(enemyUnit.currentHP);
+        audioSource.PlayOneShot(hitSound);
         dialogueText.text = "The attack is successful!";
 
         yield return new WaitForSeconds(2f);
@@ -75,6 +81,7 @@ public class BattleSystem : MonoBehaviour
         playerUnit.Heal(5);
 
         playerHUD.SetHP(playerUnit.currentHP);
+        audioSource.PlayOneShot(healSound);
         dialogueText.text = "You feel renewed strength!";
 
         yield return new WaitForSeconds(2f);
@@ -91,6 +98,7 @@ public class BattleSystem : MonoBehaviour
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
         playerHUD.SetHP(playerUnit.currentHP);
+        audioSource.PlayOneShot(hitSound);
 
         yield return new WaitForSeconds(1f);
 
