@@ -9,7 +9,6 @@ public class RasmusenChaseController : MonoBehaviour
     public bool isActive = false;
     public TimelineController timeline;
     public PlayableDirector caughtMessageTimeline;
-    public DialogueSentenceManager rasmusenDialogue;
     private Animator animator;
     private Vector3 startPos;
     private Direction startDir = Direction.None;
