@@ -27,6 +27,8 @@ public class BattleSystem : MonoBehaviour
     public AudioClip healSound;
     private AudioSource audioSource;
 
+    public GameObject combat;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -114,6 +116,13 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    IEnumerator WaitThenDestroy(float waitTime)
+    {
+        // Eyða bardaga þegar hann er búinn
+        yield return new WaitForSeconds(waitTime);
+        Destroy(combat);
+    }
+
     void EndBattle()
     {
         if (state == BattleState.WON)
@@ -124,6 +133,7 @@ public class BattleSystem : MonoBehaviour
         {
             dialogueText.text = "You were defeated.";
         }
+        StartCoroutine(WaitThenDestroy(2f));
     }
 
     void PlayerTurn()
