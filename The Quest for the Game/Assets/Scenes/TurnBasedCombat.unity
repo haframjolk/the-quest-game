@@ -777,7 +777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Heal
+  m_text: HEAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ee72acb375684f209b2c6cfc94b1cf8, type: 2}
   m_sharedMaterial: {fileID: 6846293115165475572, guid: 5ee72acb375684f209b2c6cfc94b1cf8,
@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack
+  m_text: ATTACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ee72acb375684f209b2c6cfc94b1cf8, type: 2}
   m_sharedMaterial: {fileID: 6846293115165475572, guid: 5ee72acb375684f209b2c6cfc94b1cf8,
