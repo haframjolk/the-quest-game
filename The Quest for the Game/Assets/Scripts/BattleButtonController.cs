@@ -55,7 +55,7 @@ public class BattleButtonController : MonoBehaviour
             selector.rectTransform.position = activeButton.transform.position - activeButton.transform.up * (activeButton.transform.localScale.y / 2f) * canvas.scaleFactor * 56;
 
             // Ef leikmaður velur attack/heal
-            if (Input.GetButtonDown("Submit"))
+            if (Input.GetButtonDown("Interact"))
             {
                 activeButton.onClick.Invoke();
                 audioSource.PlayOneShot(switchClip);
