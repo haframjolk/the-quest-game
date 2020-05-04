@@ -1,0 +1,56 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class BattleButtonController : MonoBehaviour
+{
+    public Button[] buttons;
+    public Image selector;
+    public Canvas canvas;
+    public AudioClip switchClip;
+    private AudioSource audioSource;
+    private int activeButtonId = 0;
+    private bool inputEnabled = true;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        // Velja mismunandi takka með lyklaborðinu
+        float input = Input.GetAxisRaw("Horizontal");
+        if (input == 0f)
+        {
+            inputEnabled = true;
+        }
+        else if (inputEnabled)
+        {
+            inputEnabled = false;
+            int direction = System.Math.Sign(input);
+            activeButtonId += direction;
+            // Passa að ID fari ekki út fyrir leyfileg mörk (0..length-1)
+            if (activeButtonId < 0)
+            {
+                activeButtonId = buttons.Length + activeButtonId;
+            }
+            else if (activeButtonId >= buttons.Length)
+            {
+                activeButtonId %= buttons.Length;
+            }
+            audioSource.PlayOneShot(switchClip);
+        }
+        // Staðsetja selector fyrir neðan takka
+        Button activeButton = buttons[activeButtonId];
+        selector.transform.position = activeButton.transform.position - activeButton.transform.up * activeButton.transform.localScale.y / 2f;
+
+        // Ef leikmaður velur attack/heal
+        if (Input.GetButtonDown("Submit"))
+        {
+            activeButton.onClick.Invoke();
+            audioSource.PlayOneShot(switchClip);
+        }
+    }
+}

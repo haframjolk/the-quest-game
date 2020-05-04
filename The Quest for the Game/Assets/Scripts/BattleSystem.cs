@@ -23,7 +23,6 @@ public class BattleSystem : MonoBehaviour
 
     public BattleState state;
 
-    // Start is called before the first frame update
     void Start()
     {
         state = BattleState.START;
@@ -31,13 +30,15 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator SetupBattle()
     {
+        // Búa til instance af leikmannsprefabi
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
 
+        // Óvinaprefab
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
-        dialogueText.text = "a wild " + enemyUnit.unitName + " approaches...";
+        dialogueText.text = $"Enemy {enemyUnit.unitName} wants to battle!";
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
@@ -53,65 +54,20 @@ public class BattleSystem : MonoBehaviour
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
         enemyHUD.SetHP(enemyUnit.currentHP);
-        dialogueText.text = "The Attack is successful!";
+        dialogueText.text = "The attack is successful!";
 
         yield return new WaitForSeconds(2f);
 
-        if(isDead)
+        if (isDead)
         {
             state = BattleState.WON;
             EndBattle();
-        } else
+        }
+        else
         {
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
-    }
-
-    IEnumerator EnemyTurn()
-    {
-        dialogueText.text = enemyUnit.unitName + " attacks!";
-
-        yield return new WaitForSeconds(1f);
-
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
-
-        playerHUD.SetHP(playerUnit.currentHP);
-
-        yield return new WaitForSeconds(1f);
-
-        if(isDead)
-        {
-            state = BattleState.LOST;
-            EndBattle();
-        } else
-        {
-            state = BattleState.PLAYERTURN;
-            PlayerTurn();
-        }
-    }
-
-    void EndBattle()
-    {
-        if(state == BattleState.WON)
-        {
-            dialogueText.text = "You won the battle!";
-        } else if (state == BattleState.LOST)
-        {
-            dialogueText.text = "You were defeated.";
-        }
-    }
-
-    void PlayerTurn()
-    {
-        dialogueText.text = "Choose an action:";
-    }
-
-    public void OnAttackButton() {
-        if (state != BattleState.PLAYERTURN && state == BattleState.PLAYERCHOOSEDACTION)
-            return;
-        state = BattleState.PLAYERCHOOSEDACTION;
-        StartCoroutine(PlayerAttack());
     }
 
     IEnumerator PlayerHeal()
@@ -127,10 +83,63 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(EnemyTurn());
     }
 
+    IEnumerator EnemyTurn()
+    {
+        dialogueText.text = $"{enemyUnit.unitName} attacks!";
+
+        yield return new WaitForSeconds(1f);
+
+        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        playerHUD.SetHP(playerUnit.currentHP);
+
+        yield return new WaitForSeconds(1f);
+
+        if (isDead)
+        {
+            state = BattleState.LOST;
+            EndBattle();
+        }
+        else
+        {
+            state = BattleState.PLAYERTURN;
+            PlayerTurn();
+        }
+    }
+
+    void EndBattle()
+    {
+        if (state == BattleState.WON)
+        {
+            dialogueText.text = "You won the battle!";
+        }
+        else if (state == BattleState.LOST)
+        {
+            dialogueText.text = "You were defeated.";
+        }
+    }
+
+    void PlayerTurn()
+    {
+        dialogueText.text = "Choose an action:";
+    }
+
+    public void OnAttackButton() {
+        // Ef leikmaður velur árás
+        if (state != BattleState.PLAYERTURN && state == BattleState.PLAYERCHOOSEDACTION)
+        {
+            return;
+        }
+        state = BattleState.PLAYERCHOOSEDACTION;
+        StartCoroutine(PlayerAttack());
+    }
+
     public void OnHealButton()
     {
+        // Ef leikmaður velur „heal“
         if (state != BattleState.PLAYERTURN && state == BattleState.PLAYERCHOOSEDACTION)
+        {
             return;
+        }
         state = BattleState.PLAYERCHOOSEDACTION;
         StartCoroutine(PlayerHeal());
     }
