@@ -33,6 +33,11 @@ public class EventHandler : MonoBehaviour
         LoadScene("NewZealand");
     }
 
+    public void LoadYonasCastle()
+    {
+        LoadScene("YonasCastle");
+    }
+
     void Update()
     {
         // Ef leikmaður ýtir á cancel takka (sjálfgefið esc), fara í aðalvalmynd
