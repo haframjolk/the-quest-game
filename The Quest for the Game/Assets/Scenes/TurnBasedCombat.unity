@@ -1018,6 +1018,8 @@ MonoBehaviour:
   selector: {fileID: 1812976636}
   canvas: {fileID: 621017595}
   switchClip: {fileID: 8300000, guid: 9098196bcab41ee44b17274076b351d8, type: 3}
+  errorClip: {fileID: 8300000, guid: cf68018143e09495a9d1656a24dec765, type: 3}
+  battleSystem: {fileID: 1306135287}
 --- !u!82 &519929431
 AudioSource:
   m_ObjectHideFlags: 0

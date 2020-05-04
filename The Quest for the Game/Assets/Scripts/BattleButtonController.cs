@@ -9,7 +9,6 @@ public class BattleButtonController : MonoBehaviour
     public Image selector;
     public Canvas canvas;
     public AudioClip switchClip;
-    public AudioClip errorClip;
     public BattleSystem battleSystem;
     private AudioSource audioSource;
     private int activeButtonId = 0;
@@ -22,44 +21,49 @@ public class BattleButtonController : MonoBehaviour
 
     void Update()
     {
-        // Velja mismunandi takka með lyklaborðinu
-        float input = Input.GetAxisRaw("Horizontal");
-        if (input == 0f)
+        // Ef komið er að leikmanni
+        if (battleSystem.state == BattleState.PLAYERTURN)
         {
-            inputEnabled = true;
-        }
-        else if (inputEnabled)
-        {
-            inputEnabled = false;
-            int direction = System.Math.Sign(input);
-            activeButtonId += direction;
-            // Passa að ID fari ekki út fyrir leyfileg mörk (0..length-1)
-            if (activeButtonId < 0)
-            {
-                activeButtonId = buttons.Length + activeButtonId;
-            }
-            else if (activeButtonId >= buttons.Length)
-            {
-                activeButtonId %= buttons.Length;
-            }
-            audioSource.PlayOneShot(switchClip);
-        }
-        // Staðsetja selector fyrir neðan takka
-        Button activeButton = buttons[activeButtonId];
-        selector.transform.position = activeButton.transform.position - activeButton.transform.up * activeButton.transform.localScale.y / 2f;
+            // Kveikja á selector
+            selector.enabled = true;
 
-        // Ef leikmaður velur attack/heal
-        if (Input.GetButtonDown("Submit"))
-        {
-            if (battleSystem.state == BattleState.PLAYERTURN)
+            // Velja mismunandi takka með lyklaborðinu
+            float input = Input.GetAxisRaw("Horizontal");
+            if (input == 0f)
+            {
+                inputEnabled = true;
+            }
+            else if (inputEnabled)
+            {
+                inputEnabled = false;
+                int direction = System.Math.Sign(input);
+                activeButtonId += direction;
+                // Passa að ID fari ekki út fyrir leyfileg mörk (0..length-1)
+                if (activeButtonId < 0)
+                {
+                    activeButtonId = buttons.Length + activeButtonId;
+                }
+                else if (activeButtonId >= buttons.Length)
+                {
+                    activeButtonId %= buttons.Length;
+                }
+                audioSource.PlayOneShot(switchClip);
+            }
+            // Staðsetja selector fyrir neðan takka
+            Button activeButton = buttons[activeButtonId];
+            selector.transform.position = activeButton.transform.position - activeButton.transform.up * activeButton.transform.localScale.y / 2f;
+
+            // Ef leikmaður velur attack/heal
+            if (Input.GetButtonDown("Submit"))
             {
                 activeButton.onClick.Invoke();
                 audioSource.PlayOneShot(switchClip);
             }
-            else
-            {
-                audioSource.PlayOneShot(errorClip);
-            }
+        }
+        // Slökkva á selector ef ekki er komið að leikmanni
+        else
+        {
+            selector.enabled = false;
         }
     }
 }
