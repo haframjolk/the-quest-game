@@ -51,7 +51,8 @@ public class BattleButtonController : MonoBehaviour
             }
             // Staðsetja selector fyrir neðan takka
             Button activeButton = buttons[activeButtonId];
-            selector.transform.position = activeButton.transform.position - activeButton.transform.up * activeButton.transform.localScale.y / 2f;
+                                                                                                                                                    // Þessum parti bætt við af mér, þarf ef notað sem prefab
+            selector.rectTransform.position = activeButton.transform.position - activeButton.transform.up * (activeButton.transform.localScale.y / 2f) * canvas.scaleFactor * 56;
 
             // Ef leikmaður velur attack/heal
             if (Input.GetButtonDown("Submit"))
