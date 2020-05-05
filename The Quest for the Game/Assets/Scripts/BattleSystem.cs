@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, PLAYERCHOOSEDACTION }
 
@@ -28,6 +29,8 @@ public class BattleSystem : MonoBehaviour
     private AudioSource audioSource;
 
     public GameObject combat;
+    public PlayableDirector playerWinTimeline;
+    public PlayableDirector playerLoseTimeline;
 
     void Start()
     {
@@ -128,10 +131,12 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
+            playerWinTimeline.Play();
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated.";
+            playerLoseTimeline.Play();
         }
         StartCoroutine(WaitThenDestroy(2f));
     }
