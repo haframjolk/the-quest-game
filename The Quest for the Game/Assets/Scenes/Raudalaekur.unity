@@ -4303,6 +4303,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1052328385}
     m_Modifications:
+    - target: {fileID: 7087391744327657815, guid: 25c66049c77ec4a03be1165c30f43931,
+        type: 3}
+      propertyPath: m_EffectDistance.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087391744327657815, guid: 25c66049c77ec4a03be1165c30f43931,
+        type: 3}
+      propertyPath: m_EffectDistance.y
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 8622110140511279336, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
       propertyPath: m_Name
@@ -4311,7 +4321,7 @@ PrefabInstance:
     - target: {fileID: 8622110140511279336, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8622110140511279337, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
