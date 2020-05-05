@@ -108,8 +108,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Sækja hreyfiskipanir frá notanda
-        moveX = Input.GetAxis("Horizontal");
-        moveY = Input.GetAxis("Vertical");
+        moveX = Input.GetAxisRaw("Horizontal");
+        moveY = Input.GetAxisRaw("Vertical");
 
         // Ef notandi ýtir á Interact-takkann, athuga hvort interactable hlutur sé innan seilingar
         if (Input.GetButtonDown("Interact"))
