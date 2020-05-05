@@ -212,6 +212,8 @@ PlayableDirector:
     value: {fileID: 371879433}
   - key: {fileID: 1502234236696874508, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
     value: {fileID: 552261813}
+  - key: {fileID: -3445446717648316101, guid: 10fb1c84342974ea3986fce8129f3702, type: 2}
+    value: {fileID: 519420034}
   m_ExposedReferences:
     m_References:
     - a8a4f25840f104b789f116ed6d2b7f56: {fileID: 1995815023}
@@ -2874,6 +2876,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0b59389bccb2a45e88ee7176b6db5f51, type: 2}
     - {fileID: 11400000, guid: 80efef086c1ff43e1a99d6aef1130a40, type: 2}
     - {fileID: 11400000, guid: 26890b6c1c5ee4c6e952f979140c539a, type: 2}
+    - {fileID: 11400000, guid: 334080523f5a94e24bb691cec7cd3d7e, type: 2}
+    - {fileID: 11400000, guid: 969a96ee2982f472cb5d4af0ecd57517, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2910,6 +2914,54 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 519420033}
+          m_MethodName: set_refResolutionX
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 80
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 519420033}
+          m_MethodName: set_refResolutionY
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 60
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 519420033}
+          m_MethodName: set_refResolutionX
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 160
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 519420033}
+          m_MethodName: set_refResolutionY
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 144
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
