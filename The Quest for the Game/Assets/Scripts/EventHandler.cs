@@ -38,6 +38,11 @@ public class EventHandler : MonoBehaviour
         LoadScene("YonasCastle");
     }
 
+    public void LoadCredits()
+    {
+        LoadScene("Credits");
+    }
+
     void Update()
     {
         // Ef leikmaður ýtir á cancel takka (sjálfgefið esc), fara í aðalvalmynd
