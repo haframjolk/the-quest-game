@@ -32,12 +32,14 @@ public class BattleSystem : MonoBehaviour
     public PlayableDirector playerWinTimeline;
     public PlayableDirector playerLoseTimeline;
 
-    void Start()
+    // Þegar kveikt er á bardaganum (ef verið er að keppa aftur), núllstilla allt
+    void OnEnable()
     {
         audioSource = GetComponent<AudioSource>();
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
+
     IEnumerator SetupBattle()
     {
         // Búa til instance af leikmannsprefabi
@@ -119,21 +121,26 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator WaitThenDestroy(float waitTime)
+    IEnumerator WaitThenDisable(float waitTime, PlayableDirector endTimeline = null)
     {
         // Eyða bardaga þegar hann er búinn
         yield return new WaitForSeconds(waitTime);
-        Destroy(combat);
+        if (endTimeline)
+        {
+            endTimeline.Play();
+        }
+        combat.SetActive(false);
     }
 
     void EndBattle()
     {
+        PlayableDirector endTimeline = null;
         if (state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
             if (playerWinTimeline)
             {
-                playerWinTimeline.Play();
+                endTimeline = playerWinTimeline;
             }
         }
         else if (state == BattleState.LOST)
@@ -141,10 +148,10 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "You were defeated.";
             if (playerLoseTimeline)
             {
-                playerLoseTimeline.Play();
+                endTimeline = playerLoseTimeline;
             }
         }
-        StartCoroutine(WaitThenDestroy(2f));
+        StartCoroutine(WaitThenDisable(2f, endTimeline));
     }
 
     void PlayerTurn()
