@@ -59,8 +59,16 @@ public class PlayerController : MonoBehaviour
     public void SetFrozen(bool value)
     {
         isFrozen = value;
-        animator.SetBool("Walking", false);
-        FloorPosition();
+        // Ef leikmaður er frystur, slökkva á gangi í animation
+        if (value)
+        {
+            animator.SetBool("Walking", false);
+        }
+        // Ef leikmaður er afþíddur, námunda staðsetningu hans
+        else
+        {
+            RoundPosition();
+        }
     }
 
     public Vector3 GetRoundPosition(Vector3 startPos)
