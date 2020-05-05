@@ -160,16 +160,20 @@ public class PlayerController : MonoBehaviour
 
             Direction currentDir = Direction.None;
 
-            // Ef leikmaður er ekki að hreyfa sig á neinum ás, finna réttan ás (x fær forgang)
+            // Ef leikmaður er ekki að hreyfa sig á neinum ás, finna réttan ás
             if (currentAxis == Axis.None)
             {
-                if (moveX != 0f)
+                if (moveX != 0f || moveY != 0f)
                 {
-                    currentAxis = Axis.X;
-                }
-                else if (moveY != 0f)
-                {
-                    currentAxis = Axis.Y;
+                    // x fær forgang ef x == y
+                    if (System.Math.Abs(moveX) >= System.Math.Abs(moveY))
+                    {
+                        currentAxis = Axis.X;
+                    }
+                    else
+                    {
+                        currentAxis = Axis.Y;
+                    }
                 }
             }
             // Ef leikmaður var að hreyfa sig á X/Y ásnum en er nú stopp
