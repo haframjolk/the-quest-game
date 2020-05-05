@@ -49,10 +49,11 @@ public class BattleButtonController : MonoBehaviour
                 }
                 audioSource.PlayOneShot(switchClip);
             }
-            // Staðsetja selector fyrir neðan takka
+            // Staðsetja selector fyrir neðan takka (færa x-hnit)
             Button activeButton = buttons[activeButtonId];
-                                                                                                                                                    // Þessum parti bætt við af mér, þarf ef notað sem prefab
-            selector.rectTransform.position = activeButton.transform.position - activeButton.transform.up * (activeButton.transform.localScale.y / 2f) * canvas.scaleFactor * 56;
+            Vector3 selectorPosition = selector.transform.position;
+            selectorPosition.x = activeButton.transform.position.x;
+            selector.transform.position = selectorPosition;
 
             // Ef leikmaður velur attack/heal
             if (Input.GetButtonDown("Interact"))
