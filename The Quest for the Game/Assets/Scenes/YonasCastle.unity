@@ -35708,7 +35708,7 @@ PrefabInstance:
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
@@ -35748,7 +35748,7 @@ PrefabInstance:
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.data[0].sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
@@ -35758,17 +35758,17 @@ PrefabInstance:
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.data[0].sentences.Array.data[0]
-      value: Welcome, you two.
+      value: You lost, how pathetic.
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.data[0].sentences.Array.data[1]
-      value: Did you bring me the sodas?
+      value: I bet you can do better than that!
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.data[0].sentences.Array.data[2]
-      value: In order to pass this checkpoint you need to bring me five kiwifruit.
+      value: Let's have a rematch!
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
@@ -36044,6 +36044,18 @@ MonoBehaviour:
   m_Events:
     m_Signals: []
     m_Events: []
+--- !u!114 &1709063525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2359784737240652997, guid: e9463f791046f44879a123c09185f3bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709063521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748638541
 GameObject:
   m_ObjectHideFlags: 0
@@ -36190,13 +36202,21 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -8333772035431315460, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
-    value: {fileID: 1839777488}
+  - key: {fileID: -3942495541094685496, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
+    value: {fileID: 1709063525}
+  - key: {fileID: 8422904255220237114, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
+    value: {fileID: 870284104}
+  - key: {fileID: 4544175013173394716, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
+    value: {fileID: 492781341}
+  - key: {fileID: 3884578933362026067, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
+    value: {fileID: 1515067703}
+  - key: {fileID: 9051436112746721819, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
+    value: {fileID: 1515067704}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1904813709
