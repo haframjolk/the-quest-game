@@ -2390,7 +2390,7 @@ PrefabInstance:
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
       propertyPath: dialogueArray.Array.data[0].sentences.Array.data[0]
-      value: WHO'S THERE?
+      value: Who's there?
       objectReference: {fileID: 0}
     - target: {fileID: 5672191469106990841, guid: e9463f791046f44879a123c09185f3bb,
         type: 3}
