@@ -9650,6 +9650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552573271}
   - component: {fileID: 552573272}
+  - component: {fileID: 552573273}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Untagged
@@ -9767,6 +9768,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &552573273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552573270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 7e642195ed8b0422380bd39f2071639e, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 552573272}
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: b35c6599cc430a64d822d63ad9c78baf,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &564299409
 GameObject:
   m_ObjectHideFlags: 0
@@ -11567,7 +11598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1181934908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11721,14 +11752,14 @@ PlayableDirector:
     value: {fileID: 1903801316}
   - key: {fileID: 2177501293691894688, guid: cc164caf0965f4eeea3a1cd88bda4947, type: 2}
     value: {fileID: 1720376192}
-  - key: {fileID: 8349165364416124957, guid: cc164caf0965f4eeea3a1cd88bda4947, type: 2}
-    value: {fileID: 552573272}
   - key: {fileID: 14368045932566461, guid: cc164caf0965f4eeea3a1cd88bda4947, type: 2}
     value: {fileID: 1903801316}
   - key: {fileID: -6867694435580564324, guid: cc164caf0965f4eeea3a1cd88bda4947, type: 2}
     value: {fileID: 459557073}
   - key: {fileID: -4043671384446565246, guid: cc164caf0965f4eeea3a1cd88bda4947, type: 2}
     value: {fileID: 550167642}
+  - key: {fileID: 7007991015953353926, guid: cc164caf0965f4eeea3a1cd88bda4947, type: 2}
+    value: {fileID: 552573273}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1230364521
@@ -42802,7 +42833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2005536067
 Transform:
   m_ObjectHideFlags: 0
