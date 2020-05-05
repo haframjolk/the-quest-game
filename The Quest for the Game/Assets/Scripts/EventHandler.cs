@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EventHandler : MonoBehaviour
 {
+    public bool canExit = true;
+
     // Hlaða inn senu
     public void LoadScene(string sceneName)
     {
@@ -45,8 +47,8 @@ public class EventHandler : MonoBehaviour
 
     void Update()
     {
-        // Ef leikmaður ýtir á cancel takka (sjálfgefið esc), fara í aðalvalmynd
-        if (Input.GetButton("Cancel"))
+        // Ef leikmaður ýtir á cancel takka (sjálfgefið esc) og má fara út úr þeirri senu sem hann er í, fara í aðalvalmynd
+        if (Input.GetButton("Cancel") && canExit)
         {
             LoadMainMenu();
         }
