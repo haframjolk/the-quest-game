@@ -49,6 +49,15 @@ public class PlayerController : MonoBehaviour
     public SlavePlayerController slavePlayer;
     private List<SlaveTarget> savedSlaveTargets;  // Notað til að halda utan um fyrri staðsetningar og animator directions leikmanns svo þræll (slave) geti elt
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Fyrir cutscene triggers
+        if (other.tag == "CutsceneTrigger")
+        {
+            other.GetComponent<CutsceneTrigger>().Trigger();
+        }
+    }
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
