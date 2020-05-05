@@ -131,12 +131,18 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
-            playerWinTimeline.Play();
+            if (playerWinTimeline)
+            {
+                playerWinTimeline.Play();
+            }
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated.";
-            playerLoseTimeline.Play();
+            if (playerLoseTimeline)
+            {
+                playerLoseTimeline.Play();
+            }
         }
         StartCoroutine(WaitThenDestroy(2f));
     }
