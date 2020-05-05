@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     public void RoundPosition()
     {
-        // Lerpa leikmann að rúnnaðri staðsetningu
+        // Lerpa leikmann að heiltölustaðsetningu
         Vector3 startPos = transform.position;
         // Byrja að hreyfa leikmann á næstu flís
         moveStartTime = Time.time;
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     public void FloorPosition()
     {
-        // Lerpa leikmann að rúnnaðri staðsetningu
+        // Lerpa leikmann að heiltölustaðsetningu
         Vector3 startPos = transform.position;
         // Byrja að hreyfa leikmann á næstu flís
         moveStartTime = Time.time;
