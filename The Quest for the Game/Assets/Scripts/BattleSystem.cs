@@ -123,7 +123,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator WaitThenDisable(float waitTime, PlayableDirector endTimeline = null)
     {
-        // Eyða bardaga þegar hann er búinn
+        // Slökkva á bardaga þegar hann er búinn
         yield return new WaitForSeconds(waitTime);
         if (endTimeline)
         {

@@ -19,7 +19,7 @@ public class BreakableObjectController : InteractableController
         isBreakable = value;
     }
 
-    IEnumerator WaitThenDestroy()
+    IEnumerator WaitThenDisable()
     {
         float timeToWait = 0f;
         if (breakClip)
@@ -27,7 +27,7 @@ public class BreakableObjectController : InteractableController
             timeToWait = breakClip.length;
         }
         yield return new WaitForSeconds(timeToWait);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void BreakObject()
@@ -38,11 +38,11 @@ public class BreakableObjectController : InteractableController
             {
                 audioSource.PlayOneShot(breakClip);
             }
-            // Slökkva á collider og renderer á meðan hljóðið spilast, áður en hlutnum er eytt, svo hann hverfi strax
+            // Slökkva á collider og renderer á meðan hljóðið spilast, áður en slökkt er á hlutnum, svo hann hverfi strax
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Renderer>().enabled = false;
             // Eyða honum þegar brothljóðið er búið að spilast
-            StartCoroutine(WaitThenDestroy());
+            StartCoroutine(WaitThenDisable());
         }
         // Spila hljóð ef ekki er hægt að brjóta hlut
         else if (errorClip && !audioSource.isPlaying)

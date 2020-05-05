@@ -12,7 +12,7 @@ public class CollectibleController : InteractableController
         audioSource = GetComponent<AudioSource>();
     }
 
-    IEnumerator WaitThenDestroy()
+    IEnumerator WaitThenDisable()
     {
         float timeToWait = 0f;
         if (collectClip)
@@ -20,7 +20,7 @@ public class CollectibleController : InteractableController
             timeToWait = collectClip.length;
         }
         yield return new WaitForSeconds(timeToWait);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public virtual void Collect()
@@ -32,11 +32,11 @@ public class CollectibleController : InteractableController
             timeToWait = collectClip.length;
             audioSource.PlayOneShot(collectClip);
         }
-        // Slökkva á collider og renderer á meðan hljóðið spilast, áður en hlutnum er eytt, svo hann hverfi strax
+        // Slökkva á collider og renderer á meðan hljóðið spilast, áður en slökkt er á hlutnum, svo hann hverfi strax
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Renderer>().enabled = false;
-        // Eyða honum þegar hljóðið er búið að spilast
-        StartCoroutine(WaitThenDestroy());
+        // Slökkva á honum þegar hljóðið er búið að spilast
+        StartCoroutine(WaitThenDisable());
     }
     public override void Interact()
     {

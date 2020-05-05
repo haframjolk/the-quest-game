@@ -14,10 +14,10 @@ public class KiwiController : InteractableNPCController
 
     public override void Interact()
     {
-        // Ef leikmaður má komast í gegn er ósýnilega landamæraveggnum eytt og Interact() aðferðin keyrð
+        // Ef leikmaður má komast í gegn er slökkt á ósýnilega landamæraveggnum og Interact() aðferðin keyrð
         if (letsPlayerPass)
         {
-            Destroy(borderWall);
+            borderWall.SetActive(false);
             base.Interact();
         }
     }
