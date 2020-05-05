@@ -36949,7 +36949,7 @@ PrefabInstance:
     - target: {fileID: 1438874910101091640, guid: 54541d61d99384b118db8954fda38484,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1438874910101091641, guid: 54541d61d99384b118db8954fda38484,
         type: 3}
@@ -37016,6 +37016,18 @@ PrefabInstance:
       propertyPath: playerLoseTimeline
       value: 
       objectReference: {fileID: 569739603}
+    - target: {fileID: 1438874910183722963, guid: 54541d61d99384b118db8954fda38484,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 3853806015880311794, guid: f6df427194b864e9282f584a268c7f59,
+        type: 3}
+    - target: {fileID: 1438874910183722963, guid: 54541d61d99384b118db8954fda38484,
+        type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 3448762420769309701, guid: 1763f55a9ea3c44638beb24313fc3003,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54541d61d99384b118db8954fda38484, type: 3}
 --- !u!1 &2113779661
