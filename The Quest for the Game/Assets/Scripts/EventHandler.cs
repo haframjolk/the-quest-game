@@ -75,6 +75,12 @@ public class EventHandler : MonoBehaviour
         LoadMainMenu();
     }
 
+    // Hætta í leik
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     void Update()
     {
         // Ef leikmaður ýtir á cancel takka (sjálfgefið esc) og má pása þá senu sem hann er í, pása leik
