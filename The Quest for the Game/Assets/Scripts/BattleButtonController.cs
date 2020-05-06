@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BattleButtonController : MonoBehaviour
 {
     public Button[] buttons;
-    public Image selector;
+    public GameObject selector;
     public Canvas canvas;
     public AudioClip switchClip;
     public BattleSystem battleSystem;
@@ -25,7 +25,7 @@ public class BattleButtonController : MonoBehaviour
         if (battleSystem.state == BattleState.PLAYERTURN)
         {
             // Kveikja á selector
-            selector.enabled = true;
+            selector.SetActive(true);
 
             // Velja mismunandi takka með lyklaborðinu
             float input = Input.GetAxisRaw("Horizontal");
@@ -65,7 +65,7 @@ public class BattleButtonController : MonoBehaviour
         // Slökkva á selector ef ekki er komið að leikmanni
         else
         {
-            selector.enabled = false;
+            selector.SetActive(false);
         }
     }
 }

@@ -894,7 +894,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 1438874908798261870}
   - {fileID: 1438874909071801732}
-  selector: {fileID: 1438874909625079512}
+  selector: {fileID: 1438874909625079518}
   canvas: {fileID: 1438874908433120479}
   switchClip: {fileID: 8300000, guid: 9098196bcab41ee44b17274076b351d8, type: 3}
   battleSystem: {fileID: 1438874910183722963}
@@ -1772,7 +1772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1438874909625079519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1789,7 +1789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -999, y: -25}
+  m_AnchoredPosition: {x: 150, y: -25}
   m_SizeDelta: {x: 20, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1438874909625079513
