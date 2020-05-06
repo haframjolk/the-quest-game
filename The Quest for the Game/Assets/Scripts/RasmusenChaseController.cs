@@ -56,7 +56,7 @@ public class RasmusenChaseController : MonoBehaviour
             // Raycast
             Vector3 raycastOrigin = new Vector3(transform.position.x + 0.5f, transform.position.y - 0.5f, transform.position.z);
             RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, raycastDir, 1, playerLayer);
-            Debug.DrawRay(raycastOrigin, raycastDir, Color.green);
+            // Debug.DrawRay(raycastOrigin, raycastDir, Color.green);
             // Ef Rasmusen er að fara að rekast á leikmann, stoppa hann og núllstilla
             if (hit.collider != null && hit.collider.tag == "Player")
             {
