@@ -5,7 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class EventHandler : MonoBehaviour
 {
-    public bool canExit = true;
+    public GameObject pauseMenu;
+    public bool canPause = true;
+    public AudioClip pauseSound;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Hlaða inn senu
     public void LoadScene(string sceneName)
@@ -45,12 +53,34 @@ public class EventHandler : MonoBehaviour
         LoadScene("Credits");
     }
 
+    // Pása leik (frysta og sýna menu)
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+        audioSource.PlayOneShot(pauseSound);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        audioSource.PlayOneShot(pauseSound);
+    }
+
     void Update()
     {
-        // Ef leikmaður ýtir á cancel takka (sjálfgefið esc) og má fara út úr þeirri senu sem hann er í, fara í aðalvalmynd
-        if (Input.GetButton("Cancel") && canExit)
+        // Ef leikmaður ýtir á cancel takka (sjálfgefið esc) og má pása þá senu sem hann er í, pása leik
+        if (Input.GetButtonDown("Cancel") && canPause)
         {
-            LoadMainMenu();
+            if (Time.timeScale == 1f)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGame();
+            }
         }
     }
 }

@@ -21,6 +21,11 @@ public class BattleButtonController : MonoBehaviour
 
     void Update()
     {
+        // Ekki taka við skipunum ef leikurinn er pásaður
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
         // Ef komið er að leikmanni
         if (battleSystem.state == BattleState.PLAYERTURN)
         {
