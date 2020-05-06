@@ -7,43 +7,59 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
-
-    //public AudioSource blib; 
-
     public Animator animator;
-
+    public TimelineController timelineController;
+    public AudioClip[] blibClips;
+    public float charInterval = 0.05f;  // Hversu margar sekúndur líða milli þess að hver stafur er birtur (í upphafi)
+    private float currentCharInterval;  // Hversu margar sekúndur eiga að líða fyrir núverandi setningu (breytilegt)
     private Queue<string> sentences;
+    private int currentAudioClipIndex;
+    private AudioSource audioSource;
+    private bool sentenceFinished = false;
     
-    // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        audioSource = GetComponent<AudioSource>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        // birtir næstu setningu ef playerinn ýtir á z
-        if (Input.GetButtonDown("Interact"))
+        // Ef spilarinn ýtir á Interact (sjálfgefið Z) og dialogue-box er virkt
+        if (Input.GetButtonDown("Interact") && animator.GetBool("IsOpen"))
         {
-            DisplayNextSentence();
-            
+            // Ef setningin er búin, sýna næstu setningu
+            if (sentenceFinished)
+            {
+                DisplayNextSentence();
+            }
+            // Ef setningin er ekki búin og hún er á venjulegum hraða, skrifa restina tvöfalt hraðar
+            else if (currentCharInterval == charInterval)
+            {
+                currentCharInterval /= 2;
+            }
         }
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        // birtir dialogue box á skjáinn
+        // Pása tímalínu ef hún er tengd
+        if (timelineController)
+        {
+            timelineController.PauseTimeline();
+        }
+        
+        // Birtir dialogue box á skjáinn
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
         sentences.Clear();
-        //setur allar setningarnar í queue
+        // Setur allar setningar í queue
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
-        
     }
 
     public void DisplayNextSentence()
@@ -53,29 +69,41 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        //tekur setninguna úr queue
+        // Tekur setningu úr queue
         string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
+        // currentCharInterval núllstillist við upphaf hverrar setningar
+        currentCharInterval = charInterval;
+        sentenceFinished = false;
         StartCoroutine(TypeSentence(sentence));
-        
     }
-    // birtir textann í dialogue boxið
-    IEnumerator TypeSentence (string sentence)
+    // Birtir textann í dialogue boxið
+    IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            //blib.Play();
-            yield return null;
+            // Ef blibClips eru til staðar, spila hljóð
+            if (blibClips.Length > 0)
+            {
+                audioSource.PlayOneShot(blibClips[currentAudioClipIndex++ % blibClips.Length]);
+            }
+            yield return new WaitForSeconds(currentCharInterval);
         }
+        // Stillist þegar setning er búin
+        sentenceFinished = true;
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
-        // dialogue boxið fer af skjánum
+        // Dialogue boxið fer af skjánum
         animator.SetBool("IsOpen", false);
+        // Ef tímalína er tengd við boxið, halda áfram að spila hana
+        if (timelineController)
+        {
+            timelineController.PlayTimeline();
+        }
     }
-    
 }

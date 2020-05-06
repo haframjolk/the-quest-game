@@ -18,50 +18,171 @@ public enum Direction
     Down = 4,
     None = 0
 }
+// Staðsetning og átt, til að geta hreyft þræl í samræmi við hreyfingar aðalleikmanns
+public class SlaveTarget
+{
+    public Vector3 pos;
+    public Direction direction;
+    
+    public SlaveTarget(Vector3 pos, Direction direction)
+    {
+        this.pos = pos;
+        this.direction = direction;
+    }
+}
+
 public class PlayerController : MonoBehaviour
 {
-    public float walkSpeed;
+    public float walkSpeed = 3;
     public LayerMask colliderLayers;
+    public bool isFrozen = false;
     private Animator animator;
     private Rigidbody2D rb2d;
+    private float moveX;
+    private float moveY;
     private Axis currentAxis = Axis.None;
     private bool isMoving = false;
     private Vector3 startPos;
     private Vector3 targetPos;
     private float moveStartTime;
     private float journeyLength;
+    public SlavePlayerController slavePlayer;
+    private List<SlaveTarget> savedSlaveTargets;  // Notað til að halda utan um fyrri staðsetningar og animator directions leikmanns svo þræll (slave) geti elt
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Fyrir cutscene triggers
+        if (other.tag == "CutsceneTrigger")
+        {
+            other.GetComponent<CutsceneTrigger>().Trigger();
+        }
+    }
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        savedSlaveTargets = new List<SlaveTarget>();
+    }
+
+    public void SetFrozen(bool value)
+    {
+        isFrozen = value;
+        // Ef leikmaður er frystur, slökkva á gangi í animation
+        if (value)
+        {
+            animator.SetBool("Walking", false);
+        }
+        // Ef leikmaður er afþíddur, námunda staðsetningu hans
+        else
+        {
+            RoundPosition();
+        }
+    }
+
+    public Vector3 GetRoundPosition(Vector3 startPos)
+    {
+        return new Vector3(Mathf.Round(startPos.x), Mathf.Round(startPos.y), Mathf.Round(startPos.z));
+    }
+
+    public Vector3 GetFloorPosition(Vector3 startPos)
+    {
+        return new Vector3(Mathf.Floor(startPos.x), Mathf.Floor(startPos.y), Mathf.Floor(startPos.z));
+    }
+
+    public void RoundPosition()
+    {
+        // Lerpa leikmann að heiltölustaðsetningu
+        Vector3 startPos = transform.position;
+        // Byrja að hreyfa leikmann á næstu flís
+        moveStartTime = Time.time;
+        startPos = transform.position;
+        targetPos = GetRoundPosition(transform.position);  // Námunda staðsetningu
+        journeyLength = Vector3.Distance(startPos, targetPos);
+        isMoving = true;
+    }
+
+    public void FloorPosition()
+    {
+        // Lerpa leikmann að heiltölustaðsetningu
+        Vector3 startPos = transform.position;
+        // Byrja að hreyfa leikmann á næstu flís
+        moveStartTime = Time.time;
+        startPos = transform.position;
+        targetPos = GetFloorPosition(transform.position);  // Námunda staðsetningu niður
+        journeyLength = Vector3.Distance(startPos, targetPos);
+        isMoving = true;
     }
 
     void Update()
     {
-        
+        // Sækja hreyfiskipanir frá notanda
+        moveX = Input.GetAxisRaw("Horizontal");
+        moveY = Input.GetAxisRaw("Vertical");
+
+        // Ef notandi ýtir á Interact-takkann, athuga hvort interactable hlutur sé innan seilingar
+        if (Input.GetButtonDown("Interact"))
+        {
+            // Finna út í hvaða átt leikmaður snýr
+            Direction currentDir = (Direction)animator.GetInteger("Direction");
+            Vector3 raycastDir = Vector3.zero;
+            if (currentDir == Direction.Left)
+            {
+                raycastDir = Vector3.left;
+            }
+            else if (currentDir == Direction.Right)
+            {
+                raycastDir = Vector3.right;
+            }
+            else if (currentDir == Direction.Up)
+            {
+                raycastDir = Vector3.up;
+            }
+            else if (currentDir == Direction.Down)
+            {
+                raycastDir = Vector3.down;
+            }
+            // Raycast
+            Vector3 raycastOrigin = new Vector3(transform.position.x + 0.5f, transform.position.y - 0.5f, transform.position.z);
+            RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, raycastDir, 1, colliderLayers);
+            // Ef finnst interactable hlutur, kalla á Interact() aðferðina
+            if (hit.collider != null && hit.collider.tag == "Interactable")
+            {
+                InteractableController interactable = hit.collider.GetComponent<InteractableController>();
+                interactable.Interact();
+                // Debug.Log("Player interacted with object " + interactable.ToString());
+            }
+        }
     }
+
     void FixedUpdate()
     {
+        // Ekki leyfa frosnum leikmanni að hreyfa sig
+        if (isFrozen)
+        {
+            return;
+        }
         // Ef leikmaður er ekki að hreyfa sig
         if (!isMoving)
         {
-            // Sækja skipanir frá notanda
-            float moveX = Input.GetAxis("Horizontal");
-            float moveY = Input.GetAxis("Vertical");
-
             int moveSign = 0;
 
-            // Ef leikmaður er ekki að hreyfa sig á neinum ás, finna réttan ás (x fær forgang)
+            Direction currentDir = Direction.None;
+
+            // Ef leikmaður er ekki að hreyfa sig á neinum ás, finna réttan ás
             if (currentAxis == Axis.None)
             {
-                if (moveX != 0f)
+                if (moveX != 0f || moveY != 0f)
                 {
-                    currentAxis = Axis.X;
-                }
-                else if (moveY != 0f)
-                {
-                    currentAxis = Axis.Y;
+                    // x fær forgang ef x == y
+                    if (System.Math.Abs(moveX) >= System.Math.Abs(moveY))
+                    {
+                        currentAxis = Axis.X;
+                    }
+                    else
+                    {
+                        currentAxis = Axis.Y;
+                    }
                 }
             }
             // Ef leikmaður var að hreyfa sig á X/Y ásnum en er nú stopp
@@ -84,7 +205,6 @@ public class PlayerController : MonoBehaviour
                 }
 
                 // Finna í hvaða átt leikmaðurinn snýr
-                Direction currentDir = Direction.None;
                 if (currentAxis == Axis.X)
                 {
                     if (moveSign == 1)
@@ -152,6 +272,18 @@ public class PlayerController : MonoBehaviour
                 targetPos = transform.position + playerMovement;
                 journeyLength = Vector3.Distance(startPos, targetPos);
                 isMoving = true;
+                
+                // Ef þræll er til staðar og leikmaður er á leið á aðra flís, halda utan um þá hreyfingu
+                if (slavePlayer && startPos != targetPos)
+                {
+                    savedSlaveTargets.Add(new SlaveTarget(targetPos, currentDir));
+                    // Ef leikmaður hefur hreyft sig nógu oft hreyfir þrællinn sig í samræmi við það
+                    if (savedSlaveTargets.Count > slavePlayer.stepOffset)
+                    {
+                        slavePlayer.MoveTo(savedSlaveTargets[0], walkSpeed);
+                        savedSlaveTargets.RemoveAt(0);
+                    }
+                }
             }
         }
         // Ef leikmaður er enn að hreyfa sig, nota lerp til að stilla staðsetninguna
