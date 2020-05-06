@@ -32,6 +32,9 @@ public class BattleSystem : MonoBehaviour
     public PlayableDirector playerWinTimeline;
     public PlayableDirector playerLoseTimeline;
 
+    private GameObject playerGO;
+    private GameObject enemyGO;
+
     // Þegar kveikt er á bardaganum (ef verið er að keppa aftur), núllstilla allt
     void OnEnable()
     {
@@ -40,14 +43,21 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetupBattle());
     }
 
+    // Þegar slökkt er á bardaganum, eyða prefabs svo þau verði ekki tvöföld ef keppt er aftur
+    void OnDisable()
+    {
+        Destroy(playerGO);
+        Destroy(enemyGO);
+    }
+
     IEnumerator SetupBattle()
     {
         // Búa til instance af leikmannsprefabi
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
 
         // Óvinaprefab
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = $"Enemy {enemyUnit.unitName} wants to battle!";
