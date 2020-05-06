@@ -68,6 +68,13 @@ public class EventHandler : MonoBehaviour
         audioSource.PlayOneShot(pauseSound);
     }
 
+    // Loka leik (afþíða fyrst því kallað er úr pásuvalmynd í þetta)
+    public void ExitGame()
+    {
+        Time.timeScale = 1f;
+        LoadMainMenu();
+    }
+
     void Update()
     {
         // Ef leikmaður ýtir á cancel takka (sjálfgefið esc) og má pása þá senu sem hann er í, pása leik
