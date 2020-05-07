@@ -22615,6 +22615,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 247235212}
     m_Modifications:
+    - target: {fileID: 7087391744327657815, guid: 25c66049c77ec4a03be1165c30f43931,
+        type: 3}
+      propertyPath: m_EffectDistance.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087391744327657815, guid: 25c66049c77ec4a03be1165c30f43931,
+        type: 3}
+      propertyPath: m_EffectDistance.y
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 8622110140511279336, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
       propertyPath: m_Name
@@ -36192,7 +36202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 6, y: -6}
+  m_EffectDistance: {x: 8, y: -8}
   m_UseGraphicAlpha: 1
 --- !u!114 &1904813712
 MonoBehaviour:
