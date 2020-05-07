@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace224d8525386944876e8af27a410ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: SVENN & SVENNZ
+  unitName: SVENN&SVENNZ
   damage: 10
   maxHP: 25
   currentHP: 20
