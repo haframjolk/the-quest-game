@@ -14,7 +14,10 @@ public class BackgroundMusic : MonoBehaviour
 
     public void Play()
     {
-        audioSource.Play();
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 
     public void Stop()

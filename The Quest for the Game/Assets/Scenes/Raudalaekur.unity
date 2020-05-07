@@ -1374,6 +1374,8 @@ PlayableDirector:
     value: {fileID: 2359784736319706455}
   - key: {fileID: 8149095243773737511, guid: 7eecba7d0ba244e0993a09e698a7af8b, type: 2}
     value: {fileID: 552261813}
+  - key: {fileID: 8499846379139075069, guid: 7eecba7d0ba244e0993a09e698a7af8b, type: 2}
+    value: {fileID: 1307192945}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &118404531
@@ -2008,11 +2010,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 470fcf432c714436ea3de3406b0fde59, type: 3}
-    - target: {fileID: 7571702157824643608, guid: 1219fec3ef5b849348f50d3cf58c4288,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7571702157824643609, guid: 1219fec3ef5b849348f50d3cf58c4288,
         type: 3}
       propertyPath: m_Name
@@ -11722,6 +11719,8 @@ PlayableDirector:
     value: {fileID: 59884998}
   - key: {fileID: 2071506852616743074, guid: 3f4493c455a264664a54c630a660962d, type: 2}
     value: {fileID: 990870352}
+  - key: {fileID: -6148132744220470142, guid: 3f4493c455a264664a54c630a660962d, type: 2}
+    value: {fileID: 1307192945}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1579396746
