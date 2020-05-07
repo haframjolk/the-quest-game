@@ -10,6 +10,12 @@ public class EventHandler : MonoBehaviour
     public AudioClip pauseSound;
     private AudioSource audioSource;
 
+    // Stilla hvort hægt sé að pása núverandi senu
+    public void SetCanPause(bool value)
+    {
+        canPause = value;
+    }
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
