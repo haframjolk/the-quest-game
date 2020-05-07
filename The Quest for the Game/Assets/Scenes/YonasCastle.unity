@@ -1560,8 +1560,8 @@ Transform:
   - {fileID: 373367205}
   - {fileID: 910406412}
   - {fileID: 994180759}
-  - {fileID: 365971295}
   - {fileID: 1705930203}
+  - {fileID: 365971295}
   - {fileID: 681713048}
   - {fileID: 1320274072}
   m_Father: {fileID: 0}
@@ -30586,7 +30586,7 @@ PlayableDirector:
   - key: {fileID: -1978362936926521067, guid: 978c381ed030d4718b37ccc63bf83569, type: 2}
     value: {fileID: 994180757}
   - key: {fileID: 2736920168033400757, guid: 978c381ed030d4718b37ccc63bf83569, type: 2}
-    value: {fileID: 1515067704}
+    value: {fileID: 1515067705}
   - key: {fileID: -3712531288943624538, guid: 978c381ed030d4718b37ccc63bf83569, type: 2}
     value: {fileID: 1515067703}
   - key: {fileID: 8903994342171464925, guid: 978c381ed030d4718b37ccc63bf83569, type: 2}
@@ -35010,7 +35010,7 @@ PrefabInstance:
     - target: {fileID: 1438874910101091640, guid: 54541d61d99384b118db8954fda38484,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1438874910101091641, guid: 54541d61d99384b118db8954fda38484,
         type: 3}
@@ -35097,13 +35097,13 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1515067702}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1515067704 stripped
+--- !u!114 &1515067705 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 651581826103251921, guid: 54541d61d99384b118db8954fda38484,
+  m_CorrespondingSourceObject: {fileID: 2604649639707158011, guid: 54541d61d99384b118db8954fda38484,
     type: 3}
   m_PrefabInstance: {fileID: 1515067702}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515067703}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
@@ -35519,7 +35519,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 247235212}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1705930204
 AudioSource:
@@ -36137,10 +36137,8 @@ PlayableDirector:
     value: {fileID: 994180758}
   - key: {fileID: 4544175013173394716, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
     value: {fileID: 994180757}
-  - key: {fileID: 3884578933362026067, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
-    value: {fileID: 1515067703}
   - key: {fileID: 9051436112746721819, guid: 90c5d74c14a5f418bb2a2e5d8edf4493, type: 2}
-    value: {fileID: 1515067704}
+    value: {fileID: 1515067705}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1904813709
