@@ -35,8 +35,15 @@ public class BattleSystem : MonoBehaviour
     private GameObject playerGO;
     private GameObject enemyGO;
 
-    // Þegar kveikt er á bardaganum (ef verið er að keppa aftur), núllstilla allt
-    void OnEnable()
+    // Byrja bardaga: núllstilla allt og kveikja síðan á combat
+    public void StartBattle()
+    {
+        InitBattle();
+        combat.SetActive(true);
+    }
+
+    // Núllstilla allt
+    void InitBattle()
     {
         audioSource = GetComponent<AudioSource>();
         state = BattleState.START;
