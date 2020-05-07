@@ -5,6 +5,7 @@ using UnityEngine;
 public class BackgroundMusic : MonoBehaviour
 {
     private AudioSource audioSource;
+    private bool isPlaying = true;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class BackgroundMusic : MonoBehaviour
             yield return null;
         }
         Stop();
+        audioSource.volume = startVolume;
     }
 
     public void FadeToEnd(float duration)
