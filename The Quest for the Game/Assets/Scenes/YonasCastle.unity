@@ -22615,6 +22615,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 247235212}
     m_Modifications:
+    - target: {fileID: 217172429387113097, guid: 25c66049c77ec4a03be1165c30f43931,
+        type: 3}
+      propertyPath: m_Text
+      value: ITEM GIVE!
+      objectReference: {fileID: 0}
     - target: {fileID: 7087391744327657815, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
       propertyPath: m_EffectDistance.x
@@ -22633,7 +22638,7 @@ PrefabInstance:
     - target: {fileID: 8622110140511279336, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8622110140511279337, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
@@ -22763,7 +22768,7 @@ PrefabInstance:
     - target: {fileID: 8622110140973707182, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 8622110140973707183, guid: 25c66049c77ec4a03be1165c30f43931,
         type: 3}
@@ -36231,7 +36236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 30, y: -15}
+  m_AnchoredPosition: {x: 30, y: -16}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1904813711
