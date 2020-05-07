@@ -35,7 +35,7 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            Screen.SetResolution(800, 600, false);
+            Screen.SetResolution(800, 600, false);  // TODO: read res
         }
         resolutionSettings.SetActive(!fullScreenEnabled);  // Sýna upplausnarstillingar bara ef slökkt er á full screen
     }
