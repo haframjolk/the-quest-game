@@ -1227,9 +1227,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: "800\xD7600"
       m_Image: {fileID: 0}
-    - m_Text: "1024\xD7768"
+    - m_Text: "1200\xD7900"
       m_Image: {fileID: 0}
-    - m_Text: "1440\xD71080"
+    - m_Text: "1600\xD71200"
       m_Image: {fileID: 0}
     - m_Text: "1920\xD71080"
       m_Image: {fileID: 0}
