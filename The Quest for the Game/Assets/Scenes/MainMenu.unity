@@ -2345,6 +2345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullScreenToggle: {fileID: 1244632050}
   settingsButton: {fileID: 1078544802}
+  closeButton: {fileID: 769848643}
   canvas: {fileID: 1923891778}
   resolutionSettings: {fileID: 444288141}
   resolutionDropdown: {fileID: 648972548}
@@ -2823,6 +2824,7 @@ MonoBehaviour:
   disabledOnWebGL:
   - {fileID: 1480535902}
   - {fileID: 1078544802}
+  - {fileID: 1314240371}
 --- !u!4 &1630343519
 Transform:
   m_ObjectHideFlags: 0
