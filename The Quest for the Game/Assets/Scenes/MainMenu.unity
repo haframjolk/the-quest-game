@@ -3042,6 +3042,11 @@ PrefabInstance:
       propertyPath: canPause
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3836739436061020582, guid: b697b9c8e7bd34bef81203e6c10d2650,
+        type: 3}
+      propertyPath: cursorEnabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b697b9c8e7bd34bef81203e6c10d2650, type: 3}
 --- !u!114 &1742888275 stripped
