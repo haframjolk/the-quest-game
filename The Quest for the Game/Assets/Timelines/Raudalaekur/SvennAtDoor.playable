@@ -255,7 +255,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Cut and Run (Intro Clip)
+    m_DisplayName: Cut and Run (Intro)
   m_Markers:
     m_Objects: []
   m_TrackProperties:
