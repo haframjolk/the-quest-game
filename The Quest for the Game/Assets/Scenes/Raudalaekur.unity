@@ -1105,6 +1105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
+      propertyPath: m_Events.m_Events.Array.data[6].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
+        type: 3}
       propertyPath: m_Events.m_Events.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 56957847}
@@ -1365,6 +1370,10 @@ PlayableDirector:
     value: {fileID: 552261813}
   - key: {fileID: 8499846379139075069, guid: 7eecba7d0ba244e0993a09e698a7af8b, type: 2}
     value: {fileID: 1307192945}
+  - key: {fileID: -119675857489740996, guid: 7eecba7d0ba244e0993a09e698a7af8b, type: 2}
+    value: {fileID: 552261813}
+  - key: {fileID: 1744704157977941015, guid: 7eecba7d0ba244e0993a09e698a7af8b, type: 2}
+    value: {fileID: 56957853}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &118404531
