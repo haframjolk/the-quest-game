@@ -114,6 +114,37 @@ public class PlayerController : MonoBehaviour
         isMoving = true;
     }
 
+    // Færa þræl í átt að meistara (t.d. notað áður en bardagi byrjar við Yonas)
+    public void MoveSlaveBehindMaster()
+    {
+        SlaveTarget target = new SlaveTarget(transform.position, (Direction)animator.GetInteger("Direction"));
+        
+        // Láta þræl vera einni einingu fyrir aftan meistara
+        float offsetX = 0f;
+        float offsetY = 0f;
+
+        if (target.direction == Direction.Up)
+        {
+            offsetY = -1f;
+        }
+        else if (target.direction == Direction.Down)
+        {
+            offsetY = 1f;
+        }
+        else if (target.direction == Direction.Right)
+        {
+            offsetX = -1f;
+        }
+        else if (target.direction == Direction.Left)
+        {
+            offsetX = 1f;
+        }
+        target.pos.x += offsetX;
+        target.pos.y += offsetY;
+        
+        slavePlayer.MoveTo(target, walkSpeed);
+    }
+
     void Update()
     {
         // Sækja hreyfiskipanir frá notanda

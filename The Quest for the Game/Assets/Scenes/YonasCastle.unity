@@ -512,17 +512,17 @@ PrefabInstance:
     - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
       propertyPath: m_Events.m_Events.Array.data[6].m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
       propertyPath: m_Events.m_Signals.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
       propertyPath: m_Events.m_Events.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
         type: 3}
@@ -543,6 +543,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Events.m_Events.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetFrozen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
+        type: 3}
+      propertyPath: m_Events.m_Signals.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5711ee20391734bdaa3aa0393098cf0c,
+        type: 2}
+    - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
+        type: 3}
+      propertyPath: m_Events.m_Events.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 56957847}
+    - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
+        type: 3}
+      propertyPath: m_Events.m_Events.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveSlaveBehindMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
+        type: 3}
+      propertyPath: m_Events.m_Events.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f, type: 3}
@@ -570,6 +591,12 @@ MonoBehaviour:
     m_Bits: 768
   isFrozen: 0
   slavePlayer: {fileID: 895930626}
+--- !u!95 &56957848 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5710409156842805864, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
+    type: 3}
+  m_PrefabInstance: {fileID: 56957845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &56957849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7482453386735750983, guid: be2f3865bf89b4b4a8a7ddcfc3d0b47f,
@@ -26349,6 +26376,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -27, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -22, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -28431,7 +28467,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 0118f6cd5971eee4ab981154a0889f0b, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: fa6da75d6e288b44cadfffa56ffd9d8b, type: 2}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: abd4c11ee3e3a3c48a5df34232eec0f3, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: dd40324b0412e5644ba54b9d961a7351, type: 2}
@@ -28535,7 +28571,7 @@ Tilemap:
       type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 514638078815988392, guid: c306b5cf205a1483abb9e9dc1481370d, type: 3}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 222138273497159589, guid: c306b5cf205a1483abb9e9dc1481370d, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 125762464515061211, guid: c306b5cf205a1483abb9e9dc1481370d, type: 3}
@@ -28624,7 +28660,7 @@ Tilemap:
     m_Data: {fileID: -4886494254268858281, guid: 04e36cb7be86e403e922a119e133f827,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 494
+  - m_RefCount: 495
     m_Data:
       e00: 1
       e01: 0
@@ -28643,7 +28679,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 494
+  - m_RefCount: 495
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -30626,6 +30662,8 @@ PlayableDirector:
     value: {fileID: 365971296}
   - key: {fileID: -6442806493890672832, guid: 978c381ed030d4718b37ccc63bf83569, type: 2}
     value: {fileID: 1005991837}
+  - key: {fileID: -8430399043861474570, guid: 978c381ed030d4718b37ccc63bf83569, type: 2}
+    value: {fileID: 56957849}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &932820505
@@ -30760,6 +30798,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &932820507 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5710409156842805864, guid: b795d3ac059c34a678ba99fbe407c38c,
+    type: 3}
+  m_PrefabInstance: {fileID: 932820505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &994180756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34945,6 +34989,12 @@ PlayableDirector:
     value: {fileID: 994180757}
   - key: {fileID: -1466517565068351371, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
     value: {fileID: 1947967549}
+  - key: {fileID: -5902507801727280686, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
+    value: {fileID: 56957848}
+  - key: {fileID: 3232497502338872245, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
+    value: {fileID: 5710409157696686959}
+  - key: {fileID: -675538451645668894, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
+    value: {fileID: 932820507}
   m_ExposedReferences:
     m_References:
     - 67d06ef03c76c4919862bddd3d066514: {fileID: 24058312}
@@ -36847,6 +36897,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9abd9dc82c4fc4726b309ba4544b9445, type: 3}
+--- !u!95 &5710409157696686959 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5710409156842805864, guid: 9abd9dc82c4fc4726b309ba4544b9445,
+    type: 3}
+  m_PrefabInstance: {fileID: 5710409157696686958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7571702157146350979
 PrefabInstance:
   m_ObjectHideFlags: 0
