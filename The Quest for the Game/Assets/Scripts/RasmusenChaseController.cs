@@ -9,6 +9,8 @@ public class RasmusenChaseController : MonoBehaviour
     public bool isActive = false;
     public TimelineController timeline;
     public PlayableDirector caughtMessageTimeline;
+    public GameObject alertPrefab;
+    private GameObject alertInstance;
     private Animator animator;
     private Vector3 startPos;
 
@@ -21,6 +23,18 @@ public class RasmusenChaseController : MonoBehaviour
     public void SetActive(bool value)
     {
         isActive = value;
+    }
+
+    // Búa til „alert“ GameObject einni einingu fyrir ofan Rasmusen
+    public void CreateAlert()
+    {
+        alertInstance = Instantiate(alertPrefab, transform.position + transform.up * 1, Quaternion.identity);
+    }
+
+    // Eyða „alert“ GameObject-inu
+    public void RemoveAlert()
+    {
+        Destroy(alertInstance);
     }
 
     void Start()
