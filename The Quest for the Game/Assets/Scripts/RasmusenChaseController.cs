@@ -11,13 +11,11 @@ public class RasmusenChaseController : MonoBehaviour
     public PlayableDirector caughtMessageTimeline;
     private Animator animator;
     private Vector3 startPos;
-    private Direction startDir = Direction.None;
 
     public void ResetRasmusen()
     {
         timeline.StopTimeline();
         transform.position = startPos;
-        animator.SetInteger("Direction", (int)startDir);
     }
 
     public void SetActive(bool value)
@@ -64,11 +62,6 @@ public class RasmusenChaseController : MonoBehaviour
                 caughtMessageTimeline.Play();
                 isActive = false;
             }
-        }
-        else
-        {
-            // Geyma síðustu átt sem notandinn sneri í áður en eltingaleikur byrjaði
-            startDir = (Direction)animator.GetInteger("Direction");
         }
     }
 }
