@@ -1199,19 +1199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &56957854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56957846}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c651152d39f14d24824dd9cce50b63c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepOffset: 2
 --- !u!1 &59884998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,7 +4247,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isFrozen: 0
-  slavePlayer: {fileID: 56957854}
+  slavePlayer: {fileID: 0}
 --- !u!114 &895930630 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7778344489071608644, guid: 9abd9dc82c4fc4726b309ba4544b9445,
