@@ -27,7 +27,7 @@ public class SettingsMenu : MonoBehaviour
     // Stilla (windowed) upplausn
     public void SetResolution(Resolution resolution)
     {
-        Screen.SetResolution(resolution.width, resolution.height, false);
+        Screen.SetResolution(resolution.width, resolution.height, FullScreenMode.Windowed);
     }
 
     // Stilla (windowed) upplausn með indexi (frá dropdown menu)
