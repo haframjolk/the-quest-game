@@ -28787,18 +28787,6 @@ MonoBehaviour:
     m_Bits: 768
   isFrozen: 0
   slavePlayer: {fileID: 0}
---- !u!114 &895930630 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7778344489071608644, guid: 9abd9dc82c4fc4726b309ba4544b9445,
-    type: 3}
-  m_PrefabInstance: {fileID: 5710409157696686958}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895930625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &904117390
 GameObject:
   m_ObjectHideFlags: 0
@@ -34979,10 +34967,6 @@ PlayableDirector:
     value: {fileID: 1568169840}
   - key: {fileID: -1952065824387062772, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
     value: {fileID: 24058312}
-  - key: {fileID: -7795902394883364087, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
-    value: {fileID: 56957849}
-  - key: {fileID: 1757281857527427893, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
-    value: {fileID: 895930630}
   - key: {fileID: 5687449115906022926, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
     value: {fileID: 994180758}
   - key: {fileID: -3144956640464694090, guid: 059b1c7b400b04f968bd9ae315a8a1f4, type: 2}
