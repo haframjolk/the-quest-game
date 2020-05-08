@@ -80,12 +80,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public Vector3 GetRoundPosition(Vector3 startPos)
+    public static Vector3 GetRoundPosition(Vector3 startPos)
     {
         return new Vector3(Mathf.Round(startPos.x), Mathf.Round(startPos.y), Mathf.Round(startPos.z));
     }
 
-    public Vector3 GetFloorPosition(Vector3 startPos)
+    public static Vector3 GetFloorPosition(Vector3 startPos)
     {
         return new Vector3(Mathf.Floor(startPos.x), Mathf.Floor(startPos.y), Mathf.Floor(startPos.z));
     }
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
         }
         target.pos.x += offsetX;
         target.pos.y += offsetY;
-        
+
         slavePlayer.MoveTo(target, walkSpeed);
     }
 

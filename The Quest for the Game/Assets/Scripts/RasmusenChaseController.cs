@@ -25,6 +25,11 @@ public class RasmusenChaseController : MonoBehaviour
         isActive = value;
     }
 
+    public void RoundPosition()
+    {
+        transform.position = PlayerController.GetRoundPosition(transform.position);
+    }
+
     // Búa til „alert“ GameObject einni einingu fyrir ofan Rasmusen
     public void CreateAlert()
     {
