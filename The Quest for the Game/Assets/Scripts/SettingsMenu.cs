@@ -40,13 +40,17 @@ public class SettingsMenu : MonoBehaviour
         
         selectedResolution = availableResolutions[index];
         SetResolution(selectedResolution);
-        // Debug.Log($"Windowed resolution set to {selectedResolution.width}*{selectedResolution.height}.");
     }
 
     // Stilla upplausn á native upplausn, full screen
     void EnableFullScreen()
     {
         Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, FullScreenMode.FullScreenWindow);
+    }
+
+    void DisableFullScreen()
+    {
+        SetResolution(selectedResolution);
     }
 
     // Stilla toggle eftir því hvort kveikt er á full screen eða ekki
@@ -56,6 +60,21 @@ public class SettingsMenu : MonoBehaviour
         toggleEnabled = false;
         fullScreenToggle.isOn = fullScreenEnabled;
         toggleEnabled = true;
+    }
+
+    // Stilla rétta upplausn í dropdown menu-inu
+    void UpdateResolutionDropdown(int index)
+    {
+        // Passa að skjástillingar breytist ekki með því að stilla resolutionChangeEnabled = false
+        resolutionChangeEnabled = false;
+        resolutionDropdown.value = index;
+        resolutionChangeEnabled = true;
+    }
+
+    // Sýna upplausnarstillingar bara ef slökkt er á full screen
+    void UpdateResolutionSettingsVisibility()
+    {
+        resolutionSettings.SetActive(!fullScreenEnabled);
     }
 
     void Start()
@@ -96,18 +115,12 @@ public class SettingsMenu : MonoBehaviour
                 // Velja fyrstu upplausnina sem sjálfgefna
                 resolutionIndex = 0;
             }
-
         }
-        // Stilla rétta upplausn í dropdown menu-inu (passa að skjástillingar breytist ekki með því að stilla resolutionChangeEnabled = false)
-        resolutionChangeEnabled = false;
-        resolutionDropdown.value = resolutionIndex;
-        resolutionChangeEnabled = true;
-
         // Halda utan um valda upplausn
         selectedResolution = availableResolutions[resolutionIndex];
+        UpdateResolutionDropdown(resolutionIndex);
 
-        // Bara sýna upplausnarstillingu ef slökkt er á full screen
-        resolutionSettings.SetActive(!fullScreenEnabled);
+        UpdateResolutionSettingsVisibility();
     }
 
     // Kveikja/slökkva á full screen
@@ -126,11 +139,11 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            SetResolution(selectedResolution);
+            DisableFullScreen();
         }
 
         UpdateToggle();
         
-        resolutionSettings.SetActive(!fullScreenEnabled);  // Sýna upplausnarstillingar bara ef slökkt er á full screen
+        UpdateResolutionSettingsVisibility();
     }
 }
