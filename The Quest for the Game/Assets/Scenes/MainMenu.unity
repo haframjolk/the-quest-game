@@ -2821,6 +2821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fed732ad75ce488fbcde91099095ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  versionText: {fileID: 2046336268}
   disabledOnWebGL:
   - {fileID: 1480535902}
   - {fileID: 1078544802}
@@ -3587,7 +3588,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: develop
+  m_Text: Version
 --- !u!222 &2046336269
 CanvasRenderer:
   m_ObjectHideFlags: 0
