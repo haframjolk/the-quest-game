@@ -34,6 +34,11 @@ public class EventHandler : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        // Ef verið er að keyra leikinn í editornum, sýna bendilinn alltaf (þægilegra að hann hverfi ekki)
+        if (Application.isEditor)
+        {
+            cursorEnabled = true;
+        }
         if (!cursorEnabled)
         {
             DisableCursor();
