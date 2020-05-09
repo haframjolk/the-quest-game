@@ -102,7 +102,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(5);
+        playerUnit.Heal(Mathf.RoundToInt(playerUnit.damage * 2f));  // Leikmaður getur „heal“-að sig um tvöfaldan skaðinn sem hann getur valdið
 
         playerHUD.SetHP(playerUnit.currentHP);
         audioSource.PlayOneShot(healSound);
