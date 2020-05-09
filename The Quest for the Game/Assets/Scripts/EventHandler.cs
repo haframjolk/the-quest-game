@@ -40,7 +40,13 @@ public class EventHandler : MonoBehaviour
         {
             cursorEnabled = true;
         }
-        if (!cursorEnabled)
+        // Kveikja á bendli ef við á (t.d. ef leikurinn klárast og notandi fer aftur í aðalvalmynd)
+        if (cursorEnabled)
+        {
+            EnableCursor();
+        }
+        // Annars slökkva
+        else
         {
             DisableCursor();
         }
