@@ -118,6 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: AGENT YONAS
-  damage: 5
-  maxHP: 30
-  currentHP: 30
+  damage: 14
+  maxHP: 60
+  currentHP: 60
