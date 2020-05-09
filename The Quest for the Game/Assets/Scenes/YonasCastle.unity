@@ -645,7 +645,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403158049}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &188145864
 TilemapRenderer:
@@ -23258,9 +23258,9 @@ Transform:
   - {fileID: 317940549}
   - {fileID: 1317965542}
   - {fileID: 904117391}
-  - {fileID: 188145863}
   - {fileID: 665530533}
   - {fileID: 2130115503}
+  - {fileID: 188145863}
   - {fileID: 37579197}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -23908,7 +23908,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403158049}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &665530534
 TilemapCollider2D:
@@ -36558,7 +36558,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403158049}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &2130115504
 TilemapCollider2D:
