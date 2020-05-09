@@ -34,8 +34,9 @@ public class EventHandler : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        // Ef verið er að keyra leikinn í editornum, sýna bendilinn alltaf (þægilegra að hann hverfi ekki)
-        if (Application.isEditor)
+        // Ef verið er að keyra leikinn í WebGL eða í editornum, sýna bendilinn alltaf
+        // Það er þægilegra að hann hverfi ekki í editornum og vafrar eru með meldingar og leiðir til að losa bendil með esc takka, sem er óþarfi að díla við
+        if (Application.platform == RuntimePlatform.WebGLPlayer || Application.isEditor)
         {
             cursorEnabled = true;
         }
