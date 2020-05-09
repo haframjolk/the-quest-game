@@ -118,6 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: HENCHMAN
-  damage: 10
+  damage: 9
   maxHP: 30
   currentHP: 30
