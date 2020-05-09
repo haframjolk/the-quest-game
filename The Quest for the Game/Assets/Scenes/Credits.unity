@@ -557,8 +557,8 @@ MonoBehaviour:
     iLife\n\nDEVS\tReyn Alpha\n\tBirkir Arndal\n\tVictor Wahid\n\nDIRECTOR\tReyn
     Alpha"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5ee72acb375684f209b2c6cfc94b1cf8, type: 2}
-  m_sharedMaterial: {fileID: 6846293115165475572, guid: 5ee72acb375684f209b2c6cfc94b1cf8,
+  m_fontAsset: {fileID: 11400000, guid: 4274dc7d21bf04fbcb6134dd39cf45b7, type: 2}
+  m_sharedMaterial: {fileID: -7404491509507286792, guid: 4274dc7d21bf04fbcb6134dd39cf45b7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 36
+  m_lineSpacing: 6
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
