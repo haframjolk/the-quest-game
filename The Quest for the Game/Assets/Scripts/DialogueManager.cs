@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,11 +17,20 @@ public class DialogueManager : MonoBehaviour
     private int currentAudioClipIndex;
     private AudioSource audioSource;
     private bool sentenceFinished = false;
+    private string transparentColorHex;
+    private string transparentColorTagOpen;
+    private string transparentColorTagClose;
     
     void Start()
     {
         sentences = new Queue<string>();
         audioSource = GetComponent<AudioSource>();
+
+        // Finna lit á textaboxi og gera transparent
+        transparentColorHex = ColorUtility.ToHtmlStringRGBA(new Color(dialogueText.color.r, dialogueText.color.g, dialogueText.color.b, 0));
+        // Litatög (rich text)
+        transparentColorTagOpen = $"<color=#{transparentColorHex}>";
+        transparentColorTagClose = "</color>";
     }
 
     void Update()
@@ -81,16 +91,25 @@ public class DialogueManager : MonoBehaviour
     // Birtir textann í dialogue boxið
     IEnumerator TypeSentence(string sentence)
     {
-        dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
+        // Upphaflega er setningin öll ósýnileg (transparent litatagið nær utan um alla setninguna)
+        StringBuilder sentenceB = new StringBuilder(transparentColorTagOpen + sentence + transparentColorTagClose);
+
+        // Sýna einn staf í einu
+        for (int i = 0; i < sentence.Length; i++)
         {
-            dialogueText.text += letter;
+            // Eyða opnunartagi frá núverandi staðsetningu og bæta því við einum staf aftar
+            sentenceB.Remove(i, transparentColorTagOpen.Length);
+            sentenceB.Insert(i+1, transparentColorTagOpen);
+            // Uppfæra texta
+            dialogueText.text = sentenceB.ToString();
+
             // Ef blibClips eru til staðar, spila hljóð
             if (blibClips.Length > 0)
             {
                 audioSource.PlayOneShot(blibClips[currentAudioClipIndex++ % blibClips.Length]);
             }
             yield return new WaitForSeconds(currentCharInterval);
+
         }
         // Stillist þegar setning er búin
         sentenceFinished = true;
