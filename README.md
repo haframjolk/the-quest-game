@@ -13,3 +13,7 @@ Created by Reyn Alpha, Victor Wahid and Birkir Arndal as part of Game Developmen
 Based on the short film series *The Quest for Soda* by Reyn Alpha.
 
 Information about external assets and resources used in this project can be found on the [Wiki](https://github.com/haframjolk/the-quest-game/wiki/Assets).
+
+## License
+
+This project is licensed under the GNU General Public License v3.0. See repository LICENSE file for more details.
