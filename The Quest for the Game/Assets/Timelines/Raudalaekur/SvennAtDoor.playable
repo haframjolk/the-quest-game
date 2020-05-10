@@ -763,7 +763,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HerbertWalkUp
   - m_Version: 1
-    m_Start: 15.65000000000001
+    m_Start: 15.683333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 7919051363198700765}
     m_Duration: 12.199999999999989
@@ -966,7 +966,7 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 9.600000000000009
+    m_PostExtrapolationTime: 9.633333333333333
     m_PreExtrapolationTime: 0
     m_DisplayName: HerbertIdleUp
   m_Markers:
@@ -1616,10 +1616,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennzWalkDown
   - m_Version: 1
-    m_Start: 15.65000000000001
+    m_Start: 15.683333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 8573148337985876311}
-    m_Duration: 5.283333333333324
+    m_Duration: 5.25
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3429858447051092241}
     m_EaseInDuration: 0
@@ -1732,7 +1732,7 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 9.600000000000009
+    m_PostExtrapolationTime: 9.633333333333333
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennzIdleDown
   - m_Version: 1
@@ -4633,10 +4633,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennWalkDown
   - m_Version: 1
-    m_Start: 15.65000000000001
+    m_Start: 15.683333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -6072858146555209260}
-    m_Duration: 5.8666666666666565
+    m_Duration: 5.833333333333332
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5213345085368281187}
     m_EaseInDuration: 0
@@ -4767,7 +4767,7 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 9.600000000000009
+    m_PostExtrapolationTime: 9.633333333333333
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennIdleDown
   - m_Version: 1
