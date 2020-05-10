@@ -3,6 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
+lang: is
+ref: play
 ---
 
 {% include unity-player.html %}
