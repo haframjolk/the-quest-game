@@ -5,11 +5,7 @@
 layout: default
 ---
 
-<div class="unity-player-container">
-    <div class="unity-player-wrapper">
-        <iframe src="{{ site.baseurl }}/assets/webgl-player/" width="800" height="600"></iframe>
-    </div>
-</div>
+{% include unity-player.html %}
 
 ## Stýringar
 
