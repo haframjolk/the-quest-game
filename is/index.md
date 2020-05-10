@@ -34,3 +34,16 @@ Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafn
 [Sækja leik fyrir macOS, Windows eða Linux](https://github.com/haframjolk/the-quest-game/releases)
 
 [Spila leik í vafra]({{ site.baseurl }}/is/play/)
+
+## Um
+
+<dl>
+    <dt>Höfundar</dt>
+    <dd>Reyn&nbsp;Alpha, Victor&nbsp;Wahid, Birkir&nbsp;Arndal</dd>
+    <dt>Skóli</dt>
+    <dd>Tækniskólinn - tölvubraut</dd>
+    <dt>Áfangi og önn</dt>
+    <dd>FORR3FL05EU-Hát (Leikjaforritun II) - vorönn 2020</dd>
+</dl>
+
+Nánari upplýsingar um þróunarferli leiksins má finna í [Wiki á GitHub](https://github.com/haframjolk/the-quest-game/wiki).
