@@ -27,7 +27,7 @@ public class DialogueManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         // Finna lit á textaboxi og gera transparent
-        transparentColorHex = ColorUtility.ToHtmlStringRGBA(new Color(dialogueText.color.r, dialogueText.color.g, dialogueText.color.b, 0));
+        transparentColorHex = ColorUtility.ToHtmlStringRGBA(new Color(dialogueText.color.r, dialogueText.color.g, dialogueText.color.b, 0f));
         // Litatög (rich text)
         transparentColorTagOpen = $"<color=#{transparentColorHex}>";
         transparentColorTagClose = "</color>";
