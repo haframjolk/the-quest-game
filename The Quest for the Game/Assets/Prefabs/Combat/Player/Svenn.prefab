@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: SVENN
-  damage: 10
+  damage: 8
   maxHP: 25
-  currentHP: 20
+  currentHP: 25
 --- !u!1 &3553794110962363863
 GameObject:
   m_ObjectHideFlags: 0
