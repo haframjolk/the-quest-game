@@ -7,3 +7,24 @@
     image-rendering: crisp-edges;
    -ms-interpolation-mode: nearest-neighbor;
 }
+/* Don't scale game above 800*600 */
+.unity-player-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* Responsive Unity player */
+.unity-player-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 4:3 */
+    margin-bottom: 15px;
+}
+.unity-player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
