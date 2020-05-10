@@ -17,6 +17,10 @@ Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafn
 
 Því miður er lífið ekki svo einfalt fyrir Svenn og Svennz og lenda þeir í því að þurfa að berjast við óvini og hlaupa frá verslunareigandanum Rasmusen oftar en einu sinni. Markmiðið er að komast í kastala Yonasar og færa honum gosið sem hann óskar sér svo heitt.
 
+## Myndband af leik
+
+{% include youtube.html id='dQw4w9WgXcQ' %}
+
 ## Stýringar
 
 | Aðgerð                                         |          Lyklaborð          | Xbox One fjarstýring |
@@ -24,10 +28,6 @@ Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafn
 | Hreyfa                                         | <kbd>WASD</kbd>, örvatakkar |  Vinstri stýrpinni   |
 | Interact (áfram með texta, tala við, taka upp) |        <kbd>Z</kbd>         |     <kbd>A</kbd>     |
 | Pása                                           |       <kbd>esc</kbd>        |  <kbd>&#9776;</kbd>  |
-
-## Myndband af leik
-
-{% include youtube.html id='dQw4w9WgXcQ' %}
 
 ## Spila
 
