@@ -19,7 +19,7 @@ Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafn
 
 ## Myndband af leik
 
-{% include youtube.html id='dQw4w9WgXcQ' %}
+{% include youtube.html id='lp3D4vzE-NU' %}
 
 ## Stýringar
 
