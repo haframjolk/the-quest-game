@@ -35,7 +35,7 @@ public class SlavePlayerController : MonoBehaviour
         animator.SetBool("Walking", true);
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         // Ef þrællinn er að hreyfa sig, færa hann áfram nær næstu flís
         if (isMoving)
@@ -47,8 +47,12 @@ public class SlavePlayerController : MonoBehaviour
             if (transform.position == targetPos)
             {
                 isMoving = false;
-                animator.SetBool("Walking", false);
             }
+        }
+        // Ef hann er ekki að hreyfa sig, slökkva á Walking í animator
+        else
+        {
+            animator.SetBool("Walking", false);
         }
     }
 }

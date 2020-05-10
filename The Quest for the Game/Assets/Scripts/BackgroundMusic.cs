@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
 {
+    public float fadeoutDuration = 0.1f;
     private AudioSource audioSource;
-    private bool isPlaying = true;
 
     void Start()
     {
@@ -25,9 +25,10 @@ public class BackgroundMusic : MonoBehaviour
         audioSource.Stop();
     }
 
+    // Stoppa afspilun hljóðs með stuttu fade-out
     public void StopSmooth()
     {
-        FadeToEnd(0.25f);
+        FadeToEnd(fadeoutDuration);
     }
 
     // Láta hljóð fjara út

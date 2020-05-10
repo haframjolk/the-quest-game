@@ -9,20 +9,37 @@ public class RasmusenChaseController : MonoBehaviour
     public bool isActive = false;
     public TimelineController timeline;
     public PlayableDirector caughtMessageTimeline;
+    public GameObject alertPrefab;
+    private GameObject alertInstance;
     private Animator animator;
     private Vector3 startPos;
-    private Direction startDir = Direction.None;
 
     public void ResetRasmusen()
     {
         timeline.StopTimeline();
         transform.position = startPos;
-        animator.SetInteger("Direction", (int)startDir);
     }
 
     public void SetActive(bool value)
     {
         isActive = value;
+    }
+
+    public void RoundPosition()
+    {
+        transform.position = PlayerController.GetRoundPosition(transform.position);
+    }
+
+    // Búa til „alert“ GameObject einni einingu fyrir ofan Rasmusen
+    public void CreateAlert()
+    {
+        alertInstance = Instantiate(alertPrefab, transform.position + transform.up * 1, Quaternion.identity);
+    }
+
+    // Eyða „alert“ GameObject-inu
+    public void RemoveAlert()
+    {
+        Destroy(alertInstance);
     }
 
     void Start()
@@ -64,11 +81,6 @@ public class RasmusenChaseController : MonoBehaviour
                 caughtMessageTimeline.Play();
                 isActive = false;
             }
-        }
-        else
-        {
-            // Geyma síðustu átt sem notandinn sneri í áður en eltingaleikur byrjaði
-            startDir = (Direction)animator.GetInteger("Direction");
         }
     }
 }

@@ -47,6 +47,8 @@ MonoBehaviour:
     m_Objects:
     - {fileID: 7397502059328707631}
     - {fileID: -1712266958301290643}
+    - {fileID: -4517444620993815617}
+    - {fileID: -4964680864371686421}
 --- !u!114 &-8620631162045119502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,14 +188,14 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 6.05
-    m_ClipIn: 31.21666666666666
-    m_Asset: {fileID: -4844821110955251503}
-    m_Duration: 9.600000000000009
+    m_Start: 6.050000000000001
+    m_ClipIn: 0
+    m_Asset: {fileID: 3272047226452793508}
+    m_Duration: 9.6
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7700377744813250398}
-    m_EaseInDuration: 0.08463501930236816
-    m_EaseOutDuration: 1.070765495300293
+    m_EaseInDuration: 0.08333333333333333
+    m_EaseOutDuration: 1.0666666666666667
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -253,7 +255,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Cut and Run
+    m_DisplayName: Cut and Run (Intro)
   m_Markers:
     m_Objects: []
   m_TrackProperties:
@@ -761,7 +763,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HerbertWalkUp
   - m_Version: 1
-    m_Start: 15.65000000000001
+    m_Start: 15.683333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 7919051363198700765}
     m_Duration: 12.199999999999989
@@ -964,7 +966,7 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 9.600000000000009
+    m_PostExtrapolationTime: 9.633333333333333
     m_PreExtrapolationTime: 0
     m_DisplayName: HerbertIdleUp
   m_Markers:
@@ -1235,7 +1237,7 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 6ca539af0e4ee4c15b95703e6053a81d, type: 2}
---- !u!114 &-4844821110955251503
+--- !u!114 &-4964680864371686421
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1244,14 +1246,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
-  m_Name: AudioPlayableAsset
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: da68636fe043e4870951080deacf0c27, type: 3}
-  m_Loop: 0
-  m_bufferingTime: 0.1
-  m_ClipProperties:
-    volume: 1
+  m_Time: 16.183333333333334
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 02f8dc61002944349af438fc7b56478e, type: 2}
 --- !u!114 &-4573146214141882155
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1274,6 +1275,22 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-4517444620993815617
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 19.833333333333332
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: b9540abaaecb7439eabd88a706832258, type: 2}
 --- !u!114 &-4427945137020366716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1599,10 +1616,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennzWalkDown
   - m_Version: 1
-    m_Start: 15.65000000000001
+    m_Start: 15.683333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 8573148337985876311}
-    m_Duration: 5.283333333333324
+    m_Duration: 5.25
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3429858447051092241}
     m_EaseInDuration: 0
@@ -1715,7 +1732,7 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 9.600000000000009
+    m_PostExtrapolationTime: 9.633333333333333
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennzIdleDown
   - m_Version: 1
@@ -2661,10 +2678,10 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 2.7
+        time: 2.7166667
         value: {x: 3, y: 7, z: 0}
         inSlope: {x: -0, y: -0, z: 0}
-        outSlope: {x: 0, y: -1.7045455, z: 0}
+        outSlope: {x: 0, y: -1.7142859, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -2672,7 +2689,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 5.633333
         value: {x: 3, y: 2, z: 0}
-        inSlope: {x: -0, y: -1.7045455, z: -0}
+        inSlope: {x: -0, y: -1.7142859, z: -0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
@@ -2761,7 +2778,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.7
+        time: 2.7166667
         value: 3
         inSlope: -0
         outSlope: 0
@@ -2816,10 +2833,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.7
+        time: 2.7166667
         value: 7
         inSlope: -0
-        outSlope: -1.7045455
+        outSlope: -1.7142859
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -2827,7 +2844,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 5.633333
         value: 2
-        inSlope: -1.7045455
+        inSlope: -1.7142859
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -3700,6 +3717,23 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &3272047226452793508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
+  m_Name: AudioPlayableAsset
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 8300000, guid: 27de3c04541f3482e9ed131c87606d17, type: 3}
+  m_Loop: 0
+  m_bufferingTime: 0.1
+  m_ClipProperties:
+    volume: 1
 --- !u!114 &3555383245010686380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4599,10 +4633,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennWalkDown
   - m_Version: 1
-    m_Start: 15.65000000000001
+    m_Start: 15.683333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -6072858146555209260}
-    m_Duration: 5.8666666666666565
+    m_Duration: 5.833333333333332
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5213345085368281187}
     m_EaseInDuration: 0
@@ -4733,14 +4767,14 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 9.600000000000009
+    m_PostExtrapolationTime: 9.633333333333333
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennIdleDown
   - m_Version: 1
     m_Start: 21.516666666666666
     m_ClipIn: 0
     m_Asset: {fileID: 3146335958932816231}
-    m_Duration: 0.6666666666666679
+    m_Duration: 0.5833333333333357
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5213345085368281187}
     m_EaseInDuration: 0
@@ -4806,10 +4840,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SvennWalkDown
   - m_Version: 1
-    m_Start: 22.183333333333334
+    m_Start: 22.1
     m_ClipIn: 0
     m_Asset: {fileID: 1321620488256669096}
-    m_Duration: 5.666666666666664
+    m_Duration: 5.7499999999999964
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5213345085368281187}
     m_EaseInDuration: 0

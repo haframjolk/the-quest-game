@@ -7,6 +7,7 @@ public class SettingsMenu : MonoBehaviour
 {   
     public Toggle fullScreenToggle;
     public GameObject settingsButton;
+    public GameObject closeButton;
     public GameObject canvas;
     public GameObject resolutionSettings;
     public Dropdown resolutionDropdown;
@@ -22,6 +23,11 @@ public class SettingsMenu : MonoBehaviour
     {
         canvas.SetActive(value);
         settingsButton.SetActive(!value);  // Fela settings takka þegar kveikt er á menu
+    }
+
+    public void ToggleActive()
+    {
+        SetActive(!canvas.activeSelf);
     }
 
     // Stilla (windowed) upplausn
@@ -121,6 +127,30 @@ public class SettingsMenu : MonoBehaviour
         UpdateResolutionDropdown(resolutionIndex);
 
         UpdateResolutionSettingsVisibility();
+    }
+
+    void Update()
+    {
+        // Ef notandi heldur cancel takka niður (sjálfgefið esc), stilla animator á takka til að sýna að honum sé haldið inni
+        if (Input.GetButtonDown("Cancel"))
+        {
+            // Ef stillingavalmyndin er opin, stilla animator á lokunartakka
+            if (canvas.activeSelf)
+            {
+                closeButton.GetComponent<Animator>().SetTrigger("Pressed");
+            }
+            // Ef hún er lokuð, stilla animator á settings takka
+            else
+            {
+                settingsButton.GetComponent<Animator>().SetTrigger("Pressed");
+            }
+        }
+
+        // Þegar notandi sleppir takka, sýna/fela stillingar
+        if (Input.GetButtonUp("Cancel"))
+        {
+            ToggleActive();
+        }
     }
 
     // Kveikja/slökkva á full screen

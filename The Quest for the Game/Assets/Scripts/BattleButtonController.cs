@@ -13,10 +13,12 @@ public class BattleButtonController : MonoBehaviour
     private AudioSource audioSource;
     private int activeButtonId = 0;
     private bool inputEnabled = true;
+    private Vector3 selectorPosition;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        selectorPosition = selector.transform.position;
     }
 
     void Update()
@@ -56,7 +58,6 @@ public class BattleButtonController : MonoBehaviour
             }
             // Staðsetja selector fyrir neðan takka (færa x-hnit)
             Button activeButton = buttons[activeButtonId];
-            Vector3 selectorPosition = selector.transform.position;
             selectorPosition.x = activeButton.transform.position.x;
             selector.transform.position = selectorPosition;
 
