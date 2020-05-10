@@ -36349,6 +36349,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -36392,6 +36393,12 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 5710409156842805868, guid: d1ded2740858f43a99db771b8bf3f300,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fe0272c26b8414a2e9f0d28c28f1a63b,
+        type: 3}
     - target: {fileID: 5710409156842805869, guid: d1ded2740858f43a99db771b8bf3f300,
         type: 3}
       propertyPath: m_LocalPosition.x
