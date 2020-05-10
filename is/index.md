@@ -11,11 +11,11 @@ ref: index
 
 ## Leikurinn
 
-The Quest for the Game er byggður á stuttmyndaseríunni [The Quest for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) og eru aðalpersónur í honum dönsku félagarnir Svenn og Svennz.
+The Quest for the Game er byggður á stuttmyndaseríunni [The Quest for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) og eru aðalpersónur hans dönsku unglingarnir og félagarnir Svenn og Svennz.
 
-Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafnað. Þeir fá að eignast nýjasta og flottasta tölvuleikinn gegn því að færa honum eina Coca-Cola og eina Pepsi. Leikur einn, ekki satt?
+Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafnað. Hann býður þeim að eignast nýjasta og flottasta tölvuleikinn gegn því að færa honum eina Coca-Cola og eina Pepsi. Barnaleikur, ekki satt?
 
-Því miður er lífið ekki svo einfalt fyrir Svenn og Svennz og lenda þeir í því að þurfa að berjast við óvini og hlaupa frá verslunareigandanum Rasmusen oftar en einu sinni. Markmiðið er að komast í kastala Yonasar og færa honum gosið sem hann óskar sér svo heitt.
+Því miður er lífið ekki svo einfalt fyrir Svenn og Svennz, en þeir lenda í því að þurfa að berjast við óvini og hlaupa frá verslunareigandanum Rasmusen oftar en einu sinni. Markmið leiksins er að komast í kastala Yonasar og færa honum gosið sem hann óskar sér svo heitt, svo vinirnir geti fengið tölvuleikinn.
 
 ## Myndband af leik
 
