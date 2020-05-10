@@ -20,7 +20,7 @@ baseurl: "/the-quest-game" # the subpath of your site, e.g. /blog
 url: "https://haframjolk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: haframjolk
 github_username:  haframjolk
-show_downloads: true
+show_downloads: false
 
 # Build settings
 markdown: kramdown
