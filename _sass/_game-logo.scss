@@ -1,0 +1,9 @@
+.game-logo {
+    width: 100%;
+}
+.pixel-art {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+   -ms-interpolation-mode: nearest-neighbor;
+}
