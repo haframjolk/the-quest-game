@@ -6,7 +6,7 @@ ref: index
 
 ## About
 
-<img class="game-logo pixel-art" src="{{ site.baseurl }}/assets/img/the-quest-game-logo.png" alt="The Quest for the Game">
+<img class="game-logo pixel-art" src="{{ '/assets/img/the-quest-game-logo.png' | relative_url }}" alt="The Quest for the Game">
 
 The Quest for the Game is based on the short film series [The Quest for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) and stars the main characters from said series, the Danish teenage buddies Svenn and Svennz.
 

@@ -6,7 +6,7 @@ ref: index
 
 ## Um leikinn
 
-<img class="game-logo pixel-art" src="{{ site.baseurl }}/assets/img/the-quest-game-logo.png" alt="The Quest for the Game">
+<img class="game-logo pixel-art" src="{{ '/assets/img/the-quest-game-logo.png' | relative_url }}" alt="The Quest for the Game">
 
 The Quest for the Game er byggður á stuttmyndaseríunni [The Quest for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) og eru aðalpersónur hans dönsku unglingarnir og vinirnir Svenn og Svennz.
 
