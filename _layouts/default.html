@@ -24,9 +24,9 @@
       {% if site.show_releases %}
         <a href="{{ site.github.releases_url }}" class="btn">{{ site.translations[lang].nav-downloads }}</a>
       {% endif %}
-      {% if site.show_play_button %}
-        <a href="{{ site.baseurl }}{% if lang != site.default-lang %}/{{ lang }}{% endif %}/play/" class="btn">{{ site.translations[lang].nav-play }}</a>
-      {% endif %}
+      {% for item in site.translations[lang].menu %}
+        <a href="{{ item[1].url | relative_url }}" class="btn">{{ item[1].name }}</a>
+      {% endfor %}
       <aside class="language-switcher">
         {% assign pages=site.pages | where: "ref", page.ref | sort: 'lang' %}
         {% for page in pages %}

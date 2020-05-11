@@ -22,7 +22,6 @@ twitter_username: haframjolk
 github_username:  haframjolk
 show_downloads: false
 show_releases: true
-show_play_button: true
 default-lang: "en"
 translations:
   en:
@@ -31,15 +30,21 @@ translations:
     nav-github:    "View on GitHub"
     nav-download:  "Download"
     nav-downloads: "Downloads"
-    nav-play:      "Play"
+    menu:
+      play:
+        name:      "Play"
+        url:       "/play/"
   is:
     lang-name:     "Íslenska"
     lang-code:     "🇮🇸"
     nav-github:    "Skoða á GitHub"
     nav-download:  "Sækja"
     nav-downloads: "Niðurhal"
-    nav-play:      "Spila"
     description:   "Tvívíður „top-down“ RPG leikur byggður á The Quest for Soda stuttmyndaseríunni"
+    menu:
+      play:
+        name:      "Spila"
+        url:       "/is/play/"
 
 # Build settings
 markdown: kramdown
