@@ -38,7 +38,7 @@ Til að komast áfram í umhverfinu gæti leikmaður mögulega þurft að taka u
 
 [Sækja leik fyrir macOS, Windows eða Linux](https://github.com/haframjolk/the-quest-game/releases)
 
-[Spila leik í vafra (WebGL)]({{ site.baseurl }}/is/play/)
+[Spila leik í vafra (WebGL)]({{ '/is/play/' | relative_url }})
 
 ## Um verkefnið
 
