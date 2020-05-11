@@ -21,6 +21,8 @@ url: "https://haframjolk.github.io" # the base hostname & protocol for your site
 twitter_username: haframjolk
 github_username:  haframjolk
 show_downloads: false
+show_releases: true
+show_play_button: true
 
 # Build settings
 markdown: kramdown
