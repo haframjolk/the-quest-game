@@ -22,9 +22,9 @@ To progress in the environment, the player may have to collect objects or intera
 
 In battles, the player can choose between attacking the enemy or healing themselves. It may be necessary to heal oneself to some degree in order to defeat the enemy.
 
-## Video
+## Trailer
 
-{% include youtube.html id="lp3D4vzE-NU" %}
+{% include youtube.html id="iraG_wsikqA" %}
 
 ## Controls
 
