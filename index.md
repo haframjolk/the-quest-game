@@ -12,7 +12,7 @@ The Quest for the Game is based on the short film series [The Quest for Soda](ht
 
 The evil Agent Yonas gives Svenn and Svennz an offer they can't refuse. He offers to give them the latest and greatest video game that everyone wants to own, in exchange for one Coca-Cola and one Pepsi. Piece of cake, right?
 
-Unfortunately life isn't so easy for Svenn and Svennz. On their quest they have to battle enemies and outrun the store owner Rasmusen more than once. The goal is to get to Yonas's castle and give him the soda he desires so much, so that our heroes can get the video game.
+Unfortunately, life isn't so easy for Svenn and Svennz. On their quest they have to battle enemies and outrun the store owner Rasmusen more than once. The goal is to get to Yonas's castle and give him the soda he desires so much, so that our heroes can get the video game.
 
 ## Gameplay
 
