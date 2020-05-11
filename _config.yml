@@ -23,6 +23,18 @@ github_username:  haframjolk
 show_downloads: false
 show_releases: true
 show_play_button: true
+default-lang: "en"
+translations:
+  en:
+    nav-github:    "View on GitHub"
+    nav-download:  "Download"
+    nav-downloads: "Downloads"
+    nav-play:      "Play"
+  is:
+    nav-github:    "Skoða á GitHub"
+    nav-download:  "Sækja"
+    nav-downloads: "Niðurhal"
+    nav-play:      "Spila"
 
 # Build settings
 markdown: kramdown
