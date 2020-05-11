@@ -30,7 +30,7 @@
       <aside class="language-switcher">
         {% assign pages=site.pages | where: "ref", page.ref | sort: 'lang' %}
         {% for page in pages %}
-          <a href="{{ page.url }}" class="btn {{ page.lang }}{% if page.lang == lang %} selected{% endif %}">
+          <a href="{{ page.url | relative_url}}" class="btn {{ page.lang }}{% if page.lang == lang %} selected{% endif %}">
             <span class="lang-code">{{ site.translations[page.lang].lang-code }}</span>
           </a>
         {% endfor %}
