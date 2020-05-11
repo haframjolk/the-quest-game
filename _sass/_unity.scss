@@ -1,12 +1,3 @@
-.game-logo {
-    width: 100%;
-}
-.pixel-art {
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-   -ms-interpolation-mode: nearest-neighbor;
-}
 /* Don't scale game above 800*600 */
 .unity-player-container {
     max-width: 800px;
