@@ -49,6 +49,8 @@ Til að komast áfram í umhverfinu gæti leikmaður mögulega þurft að taka u
     <dd>Tækniskólinn - tölvubraut</dd>
     <dt>Áfangi og önn</dt>
     <dd>FORR3FL05EU-Hát (Leikjaforritun II) - vorönn 2020</dd>
+    <dt>Leyfi</dt>
+    <dd><a href="https://github.com/haframjolk/the-quest-game/blob/master/LICENSE">GNU General Public License v3.0</a></dd>
 </dl>
 
 Nánari upplýsingar um þróunarferli leiksins má finna í [Wiki á GitHub](https://github.com/haframjolk/the-quest-game/wiki).

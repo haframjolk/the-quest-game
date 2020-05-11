@@ -49,6 +49,8 @@ In battles, the player can choose between attacking the enemy or healing themsel
     <dd>Tækniskólinn - tölvubraut</dd>
     <dt>Course and semester</dt>
     <dd>FORR3FL05EU-Hát (Game Development II) - spring 2020</dd>
+    <dt>License</dt>
+    <dd><a href="https://github.com/haframjolk/the-quest-game/blob/master/LICENSE">GNU General Public License v3.0</a></dd>
 </dl>
 
 More information about the game's development can be found in the [Wiki on GitHub](https://github.com/haframjolk/the-quest-game/wiki) (in Icelandic).
