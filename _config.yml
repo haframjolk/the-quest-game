@@ -26,11 +26,15 @@ show_play_button: true
 default-lang: "en"
 translations:
   en:
+    lang-name:     "English"
+    lang-code:     "🇺🇸"
     nav-github:    "View on GitHub"
     nav-download:  "Download"
     nav-downloads: "Downloads"
     nav-play:      "Play"
   is:
+    lang-name:     "Íslenska"
+    lang-code:     "🇮🇸"
     nav-github:    "Skoða á GitHub"
     nav-download:  "Sækja"
     nav-downloads: "Niðurhal"

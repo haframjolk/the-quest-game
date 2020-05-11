@@ -1,8 +1,25 @@
-h1 {
-    a {
-        color: inherit;
-        &:hover {
-            text-decoration: none;
+.page-header {
+    position: relative;
+    h1 {
+        a {
+            color: inherit;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .language-switcher {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        .btn {
+            &.selected {
+                background-color: white;
+                color: #606c71;
+            }
+            margin-left: 1em;
         }
     }
 }

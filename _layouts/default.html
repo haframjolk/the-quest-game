@@ -27,6 +27,14 @@
       {% if site.show_play_button %}
         <a href="{{ site.baseurl }}{% if lang != site.default-lang %}/{{ lang }}{% endif %}/play/" class="btn">{{ site.translations[lang].nav-play }}</a>
       {% endif %}
+      <aside class="language-switcher">
+        {% assign pages=site.pages | where: "ref", page.ref | sort: 'lang' %}
+        {% for page in pages %}
+          <a href="{{ page.url }}" class="btn {{ page.lang }}{% if page.lang == lang %} selected{% endif %}">
+            <span class="lang-code">{{ site.translations[page.lang].lang-code }}</span>
+          </a>
+        {% endfor %}
+      </aside>
     </section>
 
     <section class="main-content">
