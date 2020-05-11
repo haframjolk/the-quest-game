@@ -27,7 +27,7 @@ Til að komast áfram í umhverfinu gæti leikmaður mögulega þurft að taka u
 
 ## Myndband af leik
 
-{% include youtube.html id='lp3D4vzE-NU' %}
+{% include youtube.html id="lp3D4vzE-NU" %}
 
 ## Stýringar
 
