@@ -17,6 +17,14 @@ Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafn
 
 Því miður er lífið ekki svo einfalt fyrir Svenn og Svennz, en þeir lenda í því að þurfa að berjast við óvini og hlaupa frá verslunareigandanum Rasmusen oftar en einu sinni. Markmið leiksins er að komast í kastala Yonasar og færa honum gosið sem hann óskar sér svo heitt, svo vinirnir geti fengið tölvuleikinn.
 
+## Spilun leiksins
+
+Í leiknum eru mörg „cutscenes“ sem leikmaður tekur ekki beinan þátt í fyrir utan að hoppa yfir textabox sem birtast, með `Interact`-takkanum. Einnig er hægt að hraða á spilun textans með því að ýta á `Interact` á meðan textinn er enn að skrifast á skjáinn. Bakgrunnstónlist er spiluð þegar leikmaður getur hreyft sig.
+
+Til að komast áfram í umhverfinu gæti leikmaður mögulega þurft að taka upp hluti úr umhverfinu, eða eiga við þá á annan hátt. Til að gera það skal snúa að hlutnum og ýta á `Interact`. Einnig þarf leikmaður stundum að tala við aðrar persónur í leiknum og virkar það alveg eins.
+
+Í bardögum býðst leikmanni ýmist að gera árás eða lækna sjálfan sig. Það getur verið nauðsynlegt að lækna sig að einhverju leyti til þess að óvinurinn hafi ekki yfirhöndina.
+
 ## Myndband af leik
 
 {% include youtube.html id='lp3D4vzE-NU' %}
