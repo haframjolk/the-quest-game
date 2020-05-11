@@ -33,7 +33,7 @@ Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafn
 
 [Sækja leik fyrir macOS, Windows eða Linux](https://github.com/haframjolk/the-quest-game/releases)
 
-[Spila leik í vafra]({{ site.baseurl }}/is/play/)
+[Spila leik í vafra (WebGL)]({{ site.baseurl }}/is/play/)
 
 ## Um
 
