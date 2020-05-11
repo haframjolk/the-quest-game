@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: The Quest for the Game
 description: >- # this means to ignore newlines until "baseurl:"
-  2D top-down RPG game based on The Quest for Soda series
+  2D top-down RPG game based on The Quest for Soda short film series
 baseurl: "/the-quest-game" # the subpath of your site, e.g. /blog
 url: "https://haframjolk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: haframjolk
