@@ -8,7 +8,7 @@ ref: index
 
 <img class="game-logo pixel-art" src="{{ site.baseurl }}/assets/img/the-quest-game-logo.png" alt="The Quest for the Game">
 
-The Quest for the Game er byggður á stuttmyndaseríunni [The Quest for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) og eru aðalpersónur hans dönsku unglingarnir og félagarnir Svenn og Svennz.
+The Quest for the Game er byggður á stuttmyndaseríunni [The Quest for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) og eru aðalpersónur hans dönsku unglingarnir og vinirnir Svenn og Svennz.
 
 Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafnað. Hann býður þeim að eignast nýjasta og flottasta tölvuleikinn gegn því að færa honum eina Coca-Cola og eina Pepsi. Barnaleikur, ekki satt?
 
