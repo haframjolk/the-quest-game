@@ -4,7 +4,7 @@ lang: is
 ref: index
 ---
 
-## Leikurinn
+## Um leikinn
 
 <img class="game-logo pixel-art" src="{{ site.baseurl }}/assets/img/the-quest-game-logo.png" alt="The Quest for the Game">
 
@@ -40,7 +40,7 @@ Til að komast áfram í umhverfinu gæti leikmaður mögulega þurft að taka u
 
 [Spila leik í vafra (WebGL)]({{ site.baseurl }}/is/play/)
 
-## Um
+## Um verkefnið
 
 <dl>
     <dt>Höfundar</dt>
