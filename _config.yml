@@ -40,7 +40,7 @@ translations:
     nav-github:    "Skoða á GitHub"
     nav-download:  "Sækja"
     nav-downloads: "Niðurhal"
-    description:   "Tvívíður „top-down“ RPG leikur byggður á The Quest for Soda stuttmyndaseríunni"
+    description:   "Tvívíður „top-down“ RPG leikur byggður á stuttmyndaseríunni The Quest for Soda"
     menu:
       play:
         name:      "Spila"
