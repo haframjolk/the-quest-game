@@ -1,3 +1,5 @@
+@import 'variables';
+
 .page-header {
     position: relative;
     h1 {
@@ -9,17 +11,62 @@
         }
     }
     .language-switcher {
-        display: flex;
-        flex-direction: column;
+        // Display language switcher on top right
         position: absolute;
-        top: 1em;
-        right: 1em;
+        top: 1rem;
+        right: 1rem;
+        // Center language flag
+        display: flex;
+        flex-flow: column wrap-reverse;
+        max-height: 12rem;
+        // Offset by margin visible on top items
+        margin-top: -1rem;
         .btn {
+            // Margin between languages
+            margin: 0;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            // Square icon
+            width: 3rem;
+            height: 3rem;
+            // Center flag
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // Current language
             &.selected {
                 background-color: white;
                 color: #606c71;
             }
-            margin-left: 1em;
+            // Do not show language name, only flag
+            .lang-name {
+                display: none;
+            }
+        }
+        // Mobile screens (I wanted to do mobile first but the Cayman theme does it this way)
+        @media screen and (max-width: $medium-breakpoint) {
+            // Display language switcher below menu items
+            position: static;
+            flex-flow: row wrap;
+            // Offset by margins used for spacing
+            margin: 0;
+            margin-left: -1rem;
+            margin-bottom: -1rem;
+            .btn {
+                // Max 3 languages in a row
+                flex: 2 1 30%;
+                // Margin between items
+                margin: 1rem 0;
+                margin-left: 1rem;
+                // Use automatic sizing because text is visible
+                width: auto;
+                height: auto;
+                // Show the language name on mobile
+                .lang-name {
+                    display: inline;
+                    margin-left: 0.33em;
+                }
+            }
         }
     }
 }

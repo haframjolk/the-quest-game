@@ -44,6 +44,7 @@
           {% if page.lang %}
             <a href="{{ page.url | relative_url}}" class="btn {{ page.lang }}{% if page.lang == lang %} selected{% endif %}">
               <span class="lang-code">{{ site.translations[page.lang].lang-code }}</span>
+              <span class="lang-name">{{ site.translations[page.lang].lang-name }}</span>
             </a>
           {% endif %}
         {% endfor %}
