@@ -39,11 +39,13 @@
         <a href="{{ item[1].url | relative_url }}" class="btn">{{ item[1].name }}</a>
       {% endfor %}
       <aside class="language-switcher">
-        {% assign pages=site.pages | where: "ref", page.ref | sort: 'lang' %}
+        {% assign pages=site.pages | where: "ref", page.ref | sort: "lang" %}
         {% for page in pages %}
-          <a href="{{ page.url | relative_url}}" class="btn {{ page.lang }}{% if page.lang == lang %} selected{% endif %}">
-            <span class="lang-code">{{ site.translations[page.lang].lang-code }}</span>
-          </a>
+          {% if page.lang %}
+            <a href="{{ page.url | relative_url}}" class="btn {{ page.lang }}{% if page.lang == lang %} selected{% endif %}">
+              <span class="lang-code">{{ site.translations[page.lang].lang-code }}</span>
+            </a>
+          {% endif %}
         {% endfor %}
       </aside>
     </section>
