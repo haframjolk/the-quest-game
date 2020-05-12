@@ -1,6 +1,7 @@
 ---
 layout: default
 lang: en
+title: Play
 ref: play
 ---
 

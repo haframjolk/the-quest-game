@@ -1,7 +1,8 @@
 ---
 layout: default
 lang: en
-ref: index
+title: Home
+ref: home
 ---
 
 ## About

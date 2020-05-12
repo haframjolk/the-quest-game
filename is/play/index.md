@@ -1,6 +1,7 @@
 ---
 layout: default
 lang: is
+title: Spila
 ref: play
 ---
 

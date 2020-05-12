@@ -1,7 +1,8 @@
 ---
 layout: default
 lang: is
-ref: index
+title: Heim
+ref: home
 ---
 
 ## Um leikinn
