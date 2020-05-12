@@ -53,7 +53,7 @@ defaults:
       path: ""
     values:
       image:
-        path: "/assets/the-quest-game-logo-10x.png"
+        path: "/assets/img/the-quest-game-logo-10x.png"
         width: 1000
         height: 500
 
