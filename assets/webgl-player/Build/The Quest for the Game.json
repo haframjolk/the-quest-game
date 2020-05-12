@@ -1,7 +1,7 @@
 {
 "companyName": "Omegindino",
 "productName": "The Quest for the Game",
-"productVersion": "1.0.1",
+"productVersion": "1.0.2",
 "dataUrl": "The Quest for the Game.data.unityweb",
 "wasmCodeUrl": "The Quest for the Game.wasm.code.unityweb",
 "wasmFrameworkUrl": "The Quest for the Game.wasm.framework.unityweb",
