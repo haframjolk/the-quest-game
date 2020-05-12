@@ -25,6 +25,7 @@ show_releases: true
 default-lang: "en"
 translations:
   en:
+    doc-root:      "/"
     lang-name:     "English"
     lang-code:     "🇺🇸"
     nav-github:    "View on GitHub"
@@ -35,6 +36,7 @@ translations:
         name:      "Play"
         url:       "/play/"
   is:
+    doc-root:      "/is/"
     lang-name:     "Íslenska"
     lang-code:     "🇮🇸"
     nav-github:    "Skoða á GitHub"

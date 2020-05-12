@@ -23,7 +23,7 @@
   {% assign lang = page.lang | default: site.default-lang %}
   <body>
     <section class="page-header">
-      <h1 class="project-name"><a href="{{ site.baseurl }}{% if lang != site.default-lang %}/{{ lang }}{% endif %}/">{{ site.title | default: site.github.repository_name }}</a></h1>
+      <h1 class="project-name"><a href="{% if lang %}{{ site.translations[lang].doc-root | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{{ site.title | default: site.github.repository_name }}</a></h1>
       <h2 class="project-tagline">{{ site.translations[lang].description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">{{ site.translations[lang].nav-github }}</a>
