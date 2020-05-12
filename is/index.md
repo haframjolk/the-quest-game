@@ -8,9 +8,9 @@ ref: index
 
 <img class="game-logo pixel-art" src="{{ '/assets/img/the-quest-game-logo.png' | relative_url }}" alt="The Quest for the Game">
 
-The Quest for the Game er byggður á stuttmyndaseríunni [The Quest for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) og eru aðalpersónur hans dönsku unglingarnir og vinirnir Svenn og Svennz.
+The&nbsp;Quest&nbsp;for the&nbsp;Game er byggður á stuttmyndaseríunni [The&nbsp;Quest&nbsp;for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) og eru aðalpersónur hans dönsku unglingarnir og vinirnir Svenn og Svennz.
 
-Svenn og Svennz fá tilboð frá hinum illa Agent Yonas sem þeir geta ekki hafnað. Hann býður þeim að eignast nýjasta og flottasta tölvuleikinn gegn því að færa honum eina Coca-Cola og eina Pepsi. Barnaleikur, ekki satt?
+Svenn og Svennz fá tilboð frá hinum illa Agent&nbsp;Yonas sem þeir geta ekki hafnað. Hann býður þeim að eignast nýjasta og flottasta tölvuleikinn gegn því að færa honum eina Coca-Cola og eina Pepsi. Barnaleikur, ekki satt?
 
 Því miður er lífið ekki svo einfalt fyrir Svenn og Svennz, en þeir lenda í því að þurfa að berjast við óvini og hlaupa frá verslunareigandanum Rasmusen oftar en einu sinni. Markmið leiksins er að komast í kastala Yonasar og færa honum gosið sem hann óskar sér svo heitt, svo vinirnir geti fengið tölvuleikinn.
 
@@ -48,7 +48,7 @@ Til að komast áfram í umhverfinu gæti leikmaður mögulega þurft að taka u
     <dt>Skóli</dt>
     <dd>Tækniskólinn - tölvubraut</dd>
     <dt>Áfangi og önn</dt>
-    <dd>FORR3FL05EU-Hát (Leikjaforritun II) - vorönn 2020</dd>
+    <dd>FORR3FL05EU-Hát (Leikjaforritun&nbsp;II) - vorönn&nbsp;2020</dd>
     <dt>Leyfi</dt>
     <dd><a href="https://github.com/haframjolk/the-quest-game/blob/master/LICENSE">GNU General Public License v3.0</a></dd>
 </dl>

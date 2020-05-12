@@ -8,9 +8,9 @@ ref: index
 
 <img class="game-logo pixel-art" src="{{ '/assets/img/the-quest-game-logo.png' | relative_url }}" alt="The Quest for the Game">
 
-The Quest for the Game is based on the short film series [The Quest for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) and stars the main characters from said series, the Danish teenage buddies Svenn and Svennz.
+The&nbsp;Quest&nbsp;for the&nbsp;Game is based on the short film series [The&nbsp;Quest&nbsp;for Soda](https://www.youtube.com/playlist?list=PLRPhs_MpGPlg9gD7TQp-APjz5g2SNIPe7) and stars the main characters from said series, the Danish teenage buddies Svenn and Svennz.
 
-The evil Agent Yonas gives Svenn and Svennz an offer they can't refuse. He offers to give them the latest and greatest video game that everyone wants to own, in exchange for one Coca-Cola and one Pepsi. Piece of cake, right?
+The evil Agent&nbsp;Yonas gives Svenn and Svennz an offer they can't refuse. He offers to give them the latest and greatest video game that everyone wants to own, in exchange for one Coca-Cola and one Pepsi. Piece of cake, right?
 
 Unfortunately, life isn't so easy for Svenn and Svennz. On their quest they have to battle enemies and outrun the store owner Rasmusen more than once. The goal is to get to Yonas's castle and give him the soda he desires so much, so that our heroes can get the video game.
 
@@ -48,7 +48,7 @@ In battles, the player can choose between attacking the enemy or healing themsel
     <dt>School</dt>
     <dd>Tækniskólinn - tölvubraut</dd>
     <dt>Course and semester</dt>
-    <dd>FORR3FL05EU-Hát (Game Development II) - spring 2020</dd>
+    <dd>FORR3FL05EU-Hát (Game&nbsp;Development&nbsp;II) - spring&nbsp;2020</dd>
     <dt>License</dt>
     <dd><a href="https://github.com/haframjolk/the-quest-game/blob/master/LICENSE">GNU General Public License v3.0</a></dd>
 </dl>
