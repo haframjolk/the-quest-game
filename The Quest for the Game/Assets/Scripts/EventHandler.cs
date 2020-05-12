@@ -8,7 +8,8 @@ public class EventHandler : MonoBehaviour
     public GameObject pauseMenu;
     public bool canPause = true;
     public AudioClip pauseSound;
-    public bool cursorEnabled = false;  // Á bendillinn að vera sýnilegur á meðan á leik stendur?
+    public bool cursorAlwaysEnabled = false;  // Á bendillinn alltaf að vera sýnilegur á meðan á leik stendur?
+    private bool cursorEnabled = false;  // Á bendillinn að vera sýnilegur þessa stundina?
     private AudioSource audioSource;
 
     // Stilla hvort hægt sé að pása núverandi senu
@@ -38,17 +39,7 @@ public class EventHandler : MonoBehaviour
         // Það er þægilegra að hann hverfi ekki í editornum og vafrar eru með meldingar og leiðir til að losa bendil með esc takka, sem er óþarfi að díla við
         if (Application.platform == RuntimePlatform.WebGLPlayer || Application.isEditor)
         {
-            cursorEnabled = true;
-        }
-        // Kveikja á bendli ef við á (t.d. ef leikurinn klárast og notandi fer aftur í aðalvalmynd)
-        if (cursorEnabled)
-        {
-            EnableCursor();
-        }
-        // Annars slökkva
-        else
-        {
-            DisableCursor();
+            cursorAlwaysEnabled = true;
         }
     }
 
@@ -97,7 +88,7 @@ public class EventHandler : MonoBehaviour
         pauseMenu.SetActive(true);
         audioSource.PlayOneShot(pauseSound);
         // Sýna bendil í pásuvalmynd
-        EnableCursor();
+        cursorEnabled = true;
     }
 
     public void ResumeGame()
@@ -105,11 +96,7 @@ public class EventHandler : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         audioSource.PlayOneShot(pauseSound);
-        // Fela bendil aftur ef hann á að vera falinn þegar farið er út úr pásuvalmyndinni
-        if (!cursorEnabled)
-        {
-            DisableCursor();
-        }
+        cursorEnabled = false;
     }
 
     // Loka leik (afþíða fyrst því kallað er úr pásuvalmynd í þetta)
@@ -138,6 +125,16 @@ public class EventHandler : MonoBehaviour
             {
                 ResumeGame();
             }
+        }
+        // Ef bendillinn er sýnilegur, ef hann á alltaf að vera sýnilegur eða ef leikurinn er ekki í „full screen“, sýna bendil
+        if (cursorEnabled || cursorAlwaysEnabled || !Screen.fullScreen)
+        {
+            EnableCursor();
+        }
+        // Annars fela hann
+        else
+        {
+            DisableCursor();
         }
     }
 }
