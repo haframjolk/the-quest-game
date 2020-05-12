@@ -47,6 +47,15 @@ translations:
       play:
         name:      "Spila"
         url:       "/is/play/"
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      image:
+        path: "/assets/the-quest-game-logo-10x.png"
+        width: 1000
+        height: 500
 
 # Build settings
 markdown: kramdown
