@@ -47,6 +47,9 @@ translations:
       play:
         name:      "Spila"
         url:       "/is/play/"
+# SEO tags
+twitter:
+  card: summary
 defaults:
   -
     scope:
