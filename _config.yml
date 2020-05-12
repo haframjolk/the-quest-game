@@ -49,6 +49,7 @@ translations:
         url:       "/is/play/"
 # SEO tags
 twitter:
+  username: haframjolk
   card: summary
 defaults:
   -
