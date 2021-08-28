@@ -4,12 +4,22 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | The Quest for the Game</title>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      UnityLoader.instantiate("unityContainer", "Build/The Quest for the Game.json");
-    </script>
   </head>
-  <body style="margin: 0;">
-    <div id="unityContainer" style="width: 100vw; height: 100vh; margin: auto; overflow: hidden;"></div>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=800 height=600 style="width: 800px; height: 600px; background: #231F20"></canvas>
+    <script src="Build/The Quest for the Game.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/The Quest for the Game.data.gz",
+        frameworkUrl: "Build/The Quest for the Game.framework.js.gz",
+        codeUrl: "Build/The Quest for the Game.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Omegindino",
+        productName: "The Quest for the Game",
+        productVersion: "1.0.4",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
   </body>
 </html>
