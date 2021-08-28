@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlavePlayerController : MonoBehaviour
+public class FollowerPlayerController : MonoBehaviour
 {
     public int stepOffset = 2;
     private float walkSpeed;
@@ -19,10 +19,10 @@ public class SlavePlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Ef leikmaður hefur hreyft sig nóg til að þræll eigi að hreyfa sig er kallað í þetta fall, sem undirbýr hreyfinguna
-    public void MoveTo(SlaveTarget target, float speed)
+    // Ef leikmaður hefur hreyft sig nóg til að fylgjandi eigi að hreyfa sig er kallað í þetta fall, sem undirbýr hreyfinguna
+    public void MoveTo(FollowerTarget target, float speed)
     {
-        // Stilla allar þær upplýsingar sem þarf til að færa þræl
+        // Stilla allar þær upplýsingar sem þarf til að færa fylgjanda
         this.walkSpeed = speed;
         this.moveStartTime = Time.time;
         this.startPos = transform.position;
@@ -37,7 +37,7 @@ public class SlavePlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Ef þrællinn er að hreyfa sig, færa hann áfram nær næstu flís
+        // Ef fylgjandinn er að hreyfa sig, færa hann áfram nær næstu flís
         if (isMoving)
         {
             float distCovered = (Time.time - moveStartTime) * walkSpeed;

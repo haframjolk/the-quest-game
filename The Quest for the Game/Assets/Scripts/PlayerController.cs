@@ -18,13 +18,13 @@ public enum Direction
     Down = 4,
     None = 0
 }
-// Staðsetning og átt, til að geta hreyft þræl í samræmi við hreyfingar aðalleikmanns
-public class SlaveTarget
+// Staðsetning og átt, til að geta hreyft fylgjanda í samræmi við hreyfingar leiðtoga
+public class FollowerTarget
 {
     public Vector3 pos;
     public Direction direction;
     
-    public SlaveTarget(Vector3 pos, Direction direction)
+    public FollowerTarget(Vector3 pos, Direction direction)
     {
         this.pos = pos;
         this.direction = direction;
@@ -46,8 +46,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 targetPos;
     private float moveStartTime;
     private float journeyLength;
-    public SlavePlayerController slavePlayer;
-    private List<SlaveTarget> savedSlaveTargets;  // Notað til að halda utan um fyrri staðsetningar og animator directions leikmanns svo þræll (slave) geti elt
+    public FollowerPlayerController followerPlayer;
+    private List<FollowerTarget> savedFollowerTargets;  // Notað til að halda utan um fyrri staðsetningar og animator directions leikmanns svo fylgjandi geti elt
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        savedSlaveTargets = new List<SlaveTarget>();
+        savedFollowerTargets = new List<FollowerTarget>();
     }
 
     public void SetFrozen(bool value)
@@ -114,12 +114,12 @@ public class PlayerController : MonoBehaviour
         isMoving = true;
     }
 
-    // Færa þræl í átt að meistara (t.d. notað áður en bardagi byrjar við Yonas)
-    public void MoveSlaveBehindMaster()
+    // Færa fylgjanda í átt að leiðtoga (t.d. notað áður en bardagi byrjar við Yonas)
+    public void MoveFollowerBehindLeader()
     {
-        SlaveTarget target = new SlaveTarget(transform.position, (Direction)animator.GetInteger("Direction"));
+        FollowerTarget target = new FollowerTarget(transform.position, (Direction)animator.GetInteger("Direction"));
         
-        // Láta þræl vera einni einingu fyrir aftan meistara
+        // Láta fylgjanda vera einni einingu fyrir aftan leiðtoga
         float offsetX = 0f;
         float offsetY = 0f;
 
@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
         target.pos.x += offsetX;
         target.pos.y += offsetY;
 
-        slavePlayer.MoveTo(target, walkSpeed);
+        followerPlayer.MoveTo(target, walkSpeed);
     }
 
     void Update()
@@ -304,15 +304,15 @@ public class PlayerController : MonoBehaviour
                 journeyLength = Vector3.Distance(startPos, targetPos);
                 isMoving = true;
                 
-                // Ef þræll er til staðar og leikmaður er á leið á aðra flís, halda utan um þá hreyfingu
-                if (slavePlayer && startPos != targetPos)
+                // Ef fylgjandi er til staðar og leikmaður er á leið á aðra flís, halda utan um þá hreyfingu
+                if (followerPlayer && startPos != targetPos)
                 {
-                    savedSlaveTargets.Add(new SlaveTarget(targetPos, currentDir));
-                    // Ef leikmaður hefur hreyft sig nógu oft hreyfir þrællinn sig í samræmi við það
-                    if (savedSlaveTargets.Count > slavePlayer.stepOffset)
+                    savedFollowerTargets.Add(new FollowerTarget(targetPos, currentDir));
+                    // Ef leikmaður hefur hreyft sig nógu oft hreyfir fylgjandi sig í samræmi við það
+                    if (savedFollowerTargets.Count > followerPlayer.stepOffset)
                     {
-                        slavePlayer.MoveTo(savedSlaveTargets[0], walkSpeed);
-                        savedSlaveTargets.RemoveAt(0);
+                        followerPlayer.MoveTo(savedFollowerTargets[0], walkSpeed);
+                        savedFollowerTargets.RemoveAt(0);
                     }
                 }
             }
